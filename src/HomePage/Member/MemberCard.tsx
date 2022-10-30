@@ -9,7 +9,7 @@ function MemberCard(props){
             color={props.selected?"#121258":"#FFC039"}
             height = "15%"
             width = "100%"
-            onClick={() => alert("You clicked on the pink circle!")}
+            onClick={() => props.setValue(props.name)}
             radius = "0%"
             fontColor={props.selected?"#FFC039":"#121258"}
             children = {props.name}
