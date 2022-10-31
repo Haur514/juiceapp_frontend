@@ -12,6 +12,7 @@ function App() {
         <TabList>
             <Tab>Home</Tab>
             <Tab>Graph</Tab>
+            <Tab>History</Tab>
         </TabList>
         <TabPanel>
             <HomePageParent/>
@@ -19,6 +20,10 @@ function App() {
         <TabPanel>
             <h1>Graph Page</h1>
         </TabPanel>
+        <TabPanel>
+            <h1>History</h1>
+        </TabPanel>
+        
     </Tabs>
   );
 }

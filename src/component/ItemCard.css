@@ -1,0 +1,13 @@
+.ItemCard{
+    background-color: gray;
+    display:grid;
+    grid-template-rows: 80% 20%;
+    
+}
+
+.ItemCard img{
+    margin: auto;
+    width: 100%;
+    grid-row: 1/ 1;
+    
+}
