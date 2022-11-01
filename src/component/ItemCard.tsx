@@ -1,41 +1,30 @@
 import React from "react";
 import internal from "stream";
+import { isPropertySignature } from "typescript";
 import './ItemCard.css'
 
 interface Props {
-  border: string;
   color: string;
   name:string;
   onClick: () => void;
-  radius: string;
   imgSrc: string;
+  width: string;
 }
 
 const ItemCard: React.FC<Props> = ({ 
-    border,
-    color,
     name,
     onClick, 
-    radius,
-    imgSrc
+    imgSrc,
+    width
   }) => { 
   return (
     <button 
       onClick={onClick}
       className="ItemCard"
-      style={{
-         border,
-         borderRadius: radius,
-         height: "80%",
-         width: "30vh",
-         fontSize: "50px"
-      }}
     >
     <img 
-        src={imgSrc}
-        style={{
-            
-        }}></img>
+      src={imgSrc}
+    ></img>
     <span>{name}</span>
     </button>
   );

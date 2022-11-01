@@ -3,3 +3,8 @@
     height:50%;
     border: solid 1px black;
 }
+
+.JuicePane-flex{
+    overflow-x: scroll;
+    display:flex;
+}
