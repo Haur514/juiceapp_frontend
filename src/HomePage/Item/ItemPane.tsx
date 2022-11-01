@@ -10,10 +10,6 @@ function ItemPane(){
     const [selected_item, setValue] = useState("")
     const [is_popup_visible, setPopUpVisivility] = useState(false);
 
-    const openPopUp = () => {
-        setPopUpVisivility(true);
-    }
-
     const closePopUp = () => {
         setPopUpVisivility(false);
     }
@@ -21,7 +17,7 @@ function ItemPane(){
     return(
         <div className="ItemPane">
             <JuicePane setValue={setValue} setPopUpVisivility={setPopUpVisivility}/>
-            <FoodPane/>
+            <FoodPane setValue={setValue} setPopUpVisivility={setPopUpVisivility}/>
             <div className={`popup-menu ${is_popup_visible ? 'visible':'hidden'}`}>
                 <div>購入</div>
                 <div>{selected_item}</div>

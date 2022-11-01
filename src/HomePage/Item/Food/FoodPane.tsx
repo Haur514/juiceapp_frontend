@@ -9,12 +9,15 @@ function FoodPane(props){
         <div className="FoodPane">
             <div>Food</div>
             <div className="FoodPane-flex">
-            {food_list.map((juice) => {
+            {food_list.map((food) => {
                 return(
                 <ItemCard
                     color={props.selected?"#121258":"#FFC039"}
-                    onClick={() => props.setValue(props.name)}
-                    name = {juice}
+                    onClick={() => {
+                        props.setValue(food);
+                        props.setPopUpVisivility(true);
+                    }}
+                    name = {food}
                     imgSrc = {LogoCocaCora}
                     width = "100px"
                 />
