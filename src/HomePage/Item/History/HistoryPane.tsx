@@ -2,6 +2,7 @@ import React from "react";
 import './HistoryPane.css';
 import ItemCard from "../../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
+import HistoryCard from "./HistoryCard";
 
 const history_list = ["PotatoChips","Rice","Pasta","Dagashi"];
 function HistoryPane(props){
@@ -9,21 +10,18 @@ function HistoryPane(props){
         <div className="HistoryPane">
             <div className="Category">History</div>
             <div className="HistoryPane-flex">
-            {history_list.map((history) => {
-                return(
-                <ItemCard
-                    color={props.selected?"#121258":"#FFC039"}
-                    onClick={() => {
-                        props.setValue(history);
-                        props.setPopUpVisivility(true);
-                    }}
-                    name = {history}
-                    imgSrc = {LogoCocaCora}
-                    width = "100px"
-                />
-                )
-            })}
-            
+            <HistoryCard 
+                date="2022/11/1 10:00:00"
+                purchasedItem="PotatoChips"
+                money="100"/>
+            <HistoryCard 
+                date="2022/11/1 10:00:00"
+                purchasedItem="PotatoChips"
+                money="100"/>
+            <HistoryCard 
+                date="2022/11/1 10:00:00"
+                purchasedItem="PotatoChips"
+                money="100"/>
             </div>
         </div>
     );

@@ -1,0 +1,19 @@
+.HistoryCard{
+    border: solid 1px black;
+    overflow-x: scroll;
+    font-size: 2em;
+    display:flex;
+}
+
+.cancel-button{
+    margin-left:2em;
+}
+.history-date{
+    margin-left:1em;
+}
+.history-purchasedItem{
+    margin-left:2em;
+}
+.history-money{
+    margin-left:2em;
+}

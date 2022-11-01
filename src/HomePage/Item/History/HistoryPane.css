@@ -1,12 +1,7 @@
-.FoodPane{
+.HistoryPane{
     width:100%;
-    height:50%;
     border: solid 1px black;
-}
-
-.HistoryPane-flex{
-    overflow-x: scroll;
-    display:flex;
+    overflow-y:scroll;
 }
 
 .Category{

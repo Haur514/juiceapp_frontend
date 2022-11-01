@@ -23,7 +23,6 @@ function App() {
         <TabPanel>
             <h1>History</h1>
         </TabPanel>
-        
     </Tabs>
   );
 }

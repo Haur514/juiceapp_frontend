@@ -2,14 +2,15 @@ import React from "react";
 import internal from "stream";
 
 interface Props {
-  border: string;
+  border?: string;
   color: string;
   children?: React.ReactNode;
-  height: string;
+  height?: string;
   onClick: () => void;
-  radius: string;
-  width: string;
+  radius?: string;
+  width?: string;
   fontColor: string;
+  fontSize?: string;
 }
 
 const Button: React.FC<Props> = ({ 
@@ -20,7 +21,8 @@ const Button: React.FC<Props> = ({
     onClick, 
     radius,
     width,
-    fontColor
+    fontColor,
+    fontSize
   }) => { 
   return (
     <button 
@@ -31,8 +33,8 @@ const Button: React.FC<Props> = ({
          borderRadius: radius,
          height,
          width,
-         fontSize: "50px",
-         color: fontColor
+         color: fontColor,
+         fontSize: fontSize
       }}
     >
     {children}

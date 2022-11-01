@@ -13,6 +13,7 @@ function MemberCard(props){
             radius = "0%"
             fontColor={props.selected?"#FFC039":"#121258"}
             children = {props.name}
+            fontSize = "50px"
         />
     );
 }
