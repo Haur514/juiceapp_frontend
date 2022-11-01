@@ -5,6 +5,7 @@
     border-color:black;
     border: solid 1px #333;
     margin:5px;
+    overflow-y: scroll;
 }
 
 .popup-menu{

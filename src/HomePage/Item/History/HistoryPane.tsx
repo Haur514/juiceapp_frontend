@@ -1,23 +1,23 @@
 import React from "react";
-import './FoodPane.css';
+import './HistoryPane.css';
 import ItemCard from "../../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 
-const food_list = ["PotatoChips","Rice","Pasta","Dagashi"];
-function FoodPane(props){
+const history_list = ["PotatoChips","Rice","Pasta","Dagashi"];
+function HistoryPane(props){
     return(
-        <div className="FoodPane">
-            <div className="Category">Food</div>
-            <div className="FoodPane-flex">
-            {food_list.map((food) => {
+        <div className="HistoryPane">
+            <div className="Category">History</div>
+            <div className="HistoryPane-flex">
+            {history_list.map((history) => {
                 return(
                 <ItemCard
                     color={props.selected?"#121258":"#FFC039"}
                     onClick={() => {
-                        props.setValue(food);
+                        props.setValue(history);
                         props.setPopUpVisivility(true);
                     }}
-                    name = {food}
+                    name = {history}
                     imgSrc = {LogoCocaCora}
                     width = "100px"
                 />
@@ -29,4 +29,4 @@ function FoodPane(props){
     );
 }
 
-export default FoodPane;
+export default HistoryPane;

@@ -9,7 +9,7 @@ const juices_list = ["CocaCora","Fanta","Water","Tea"];
 function JuicePane(props){
     return(
         <div className="JuicePane">
-            <div>Juice</div>
+            <div className="Category">Juice</div>
             <div className="JuicePane-flex">
             {juices_list.map((juice) => {
                 return(
