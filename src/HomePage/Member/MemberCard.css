@@ -1,11 +1,17 @@
 .MemberCard{
-    height:10%;
-    width:100%;
-    margin:auto;
-    border-width:2px;
-    border-color:black;
-    border: solid 1px #333;
-    padding:auto;
+    height:100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.MemberCard img{
+    display:block;
+    height:80%;
+    padding-left:auto;
+    margin-right:0.5em;
+    margin-left:0.5em;
+    border-radius: 50%;
 }
 
 .SelectedMemberCard{
