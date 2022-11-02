@@ -16,7 +16,8 @@
     bottom:20vh;
     z-index: 2;
     padding:1rem;
-    background:gray;
+    background:rgb(251, 255, 199);
+    border: solid 10px rgb(168, 170, 131);
     border-radius: 0.5rem;
     color:black;
     font-size: 5vw;
