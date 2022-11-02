@@ -1,0 +1,27 @@
+.popup-menu{
+    position: fixed;
+    top: 20vh;
+    left:20vw;
+    right:20vw;
+    bottom:20vh;
+    z-index: 2;
+    padding:1rem;
+    background:rgb(251, 255, 199);
+    border: solid 10px rgb(168, 170, 131);
+    border-radius: 0.5rem;
+    color:black;
+    font-size: 5vw;
+
+    transform: scale(0);
+    transform-origin: center center;
+    transition: transform 0.2s;
+}
+
+.visible{
+    transform: scale(1)
+}
+
+.popup-menu Button{
+    margin-left:0.5em;
+    margin-right:0.5em;
+}
