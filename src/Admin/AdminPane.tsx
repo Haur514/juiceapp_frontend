@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AdminPane.css";
 import backgroundImg from "./../image/background/admin-background.jpeg"
 import PullDownMenu from "../component/PullDownMenu";
+import UserAddPane from "./UserAdd/UserAddPane";
 
 function userAddClicked(is_user_add_pulldown_visible,setUserAddVisivility){
     setUserAddVisivility(!is_user_add_pulldown_visible);
@@ -30,7 +31,9 @@ function Admin(){
             <div className="ContentPane">
                 <PullDownMenu 
                     summary="ユーザの追加"
-                    children={<div>hoge<div>hoge</div><div>hoge</div><div>hoge</div><div>hoge</div><div>hoge</div><div>hoge</div></div>}
+                    children={
+                        <UserAddPane/>
+                    }
                     />
                 <PullDownMenu 
                     summary="アイテムの登録"
@@ -39,6 +42,11 @@ function Admin(){
                     />
                 <PullDownMenu 
                     summary="slackへの通知"
+                    onClick={slackSendClicked}
+                    children={<div>hoge</div>}
+                    />
+                <PullDownMenu 
+                    summary="金額未払い者の管理"
                     onClick={slackSendClicked}
                     children={<div>hoge</div>}
                     />

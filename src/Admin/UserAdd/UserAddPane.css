@@ -1,0 +1,22 @@
+.UserAddPane{
+    
+}
+
+.UserAddPane label{
+    display:flex;
+    align-items: center;
+}
+
+.UserAddPane input{
+    height:2em;
+}
+
+.UserAddPane select{
+    height:2em;
+}
+
+.UserAddPane Button{
+    opacity:1;
+    font-size:1em;
+    margin:0.5em;
+}
