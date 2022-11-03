@@ -8,7 +8,9 @@ function Admin(){
             <div className="TabPane"></div>
             <img src={backgroundImg}/>
             <div className="ContentPane">
-                <div className="MsgBox">hoge</div>
+                <div className="MsgBox">▶︎ ユーザーの追加</div>
+                <div className="MsgBox">▶︎ 商品の追加</div>
+                <div className="MsgBox">▶︎ slackへの送信</div>
             </div>
         </div>
     );

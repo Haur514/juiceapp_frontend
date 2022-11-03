@@ -10,6 +10,7 @@
     width:100vw;
     height:100vh;
     object-fit:cover;   
+    filter: brightness(70%) saturate(150%);
 }
 
 .AdminPane .TabPane{
@@ -25,9 +26,16 @@
 .AdminPane .MsgBox{
     margin-left:auto;
     margin-right:auto;
+    margin-top:0.5em;
+    margin-bottom: 0.5em;
+    padding-left:0.5em;
     background-color: white;
     opacity:0.8;
     width:80%;
     border-radius: 0.2em;
     font-size:2em;
+}
+
+.AdminPane .ContentPane{
+    overflow-y:scroll;
 }
