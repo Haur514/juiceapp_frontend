@@ -5,7 +5,7 @@ import HomePageParent from './HomePage/HomePageParent';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Graph from './Graph/Graph';
-import Admin from './Admin/Admin';
+import AdminPane from './Admin/AdminPane';
 
 
 function App() {
@@ -23,7 +23,7 @@ function App() {
             <Graph />
         </TabPanel>
         <TabPanel>
-            <Admin />
+            <AdminPane />
         </TabPanel>
     </Tabs>
   );

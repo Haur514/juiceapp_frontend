@@ -1,0 +1,33 @@
+.AdminPane {
+    width:100%;
+    height:100%;
+}
+
+.AdminPane img{
+    position:fixed;
+    inset: 0;
+    z-index: -10;
+    width:100vw;
+    height:100vh;
+    object-fit:cover;   
+}
+
+.AdminPane .TabPane{
+    position:fixed;
+    top:0;
+    z-index: -9;
+    background-color:white;
+    opacity:0.8;
+    width:100%;
+    height:2em;
+}
+
+.AdminPane .MsgBox{
+    margin-left:auto;
+    margin-right:auto;
+    background-color: white;
+    opacity:0.8;
+    width:80%;
+    border-radius: 0.2em;
+    font-size:2em;
+}
