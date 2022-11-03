@@ -3,7 +3,7 @@ import './JuicePane.css';
 import ItemCard from "../../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 
-const juices_list = ["CocaCora","Fanta","Water","Tea"];
+const juices_list = ["CocaCora","Fanta","Water","GogoTea-Milk","GogoTea-Lemon","Gogotea-straight"];
 
 
 function JuicePane(props){

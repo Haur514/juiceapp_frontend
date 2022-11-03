@@ -5,6 +5,8 @@ import JuicePane from "./Juice/JuicePane";
 import HistoryPane from "./History/HistoryPane";
 import PopUpMenu from "./PopUpMenu";
 
+import LogoCora from "./../../image/logo_coca_cora.jpeg"
+
 // let selected_item: SVGStringList = "";
 
 function ItemPane(){
@@ -24,7 +26,8 @@ function ItemPane(){
             <PopUpMenu 
                 name={selected_item}
                 visible={is_popup_visible}
-                setPopUpVisivility={setPopUpVisivility}/>
+                setPopUpVisivility={setPopUpVisivility}
+                imgSrc={LogoCora}/>
         </div>
     );
 }

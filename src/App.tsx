@@ -4,6 +4,8 @@ import './App.css';
 import HomePageParent from './HomePage/HomePageParent';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Graph from './Graph/Graph';
+import Admin from './Admin/Admin';
 
 
 function App() {
@@ -12,16 +14,16 @@ function App() {
         <TabList>
             <Tab>Home</Tab>
             <Tab>Graph</Tab>
-            <Tab>History</Tab>
+            <Tab>Admin</Tab>
         </TabList>
         <TabPanel>
             <HomePageParent/>
         </TabPanel>
         <TabPanel>
-            <h1>Graph Page</h1>
+            <Graph />
         </TabPanel>
         <TabPanel>
-            <h1>History</h1>
+            <Admin />
         </TabPanel>
     </Tabs>
   );
