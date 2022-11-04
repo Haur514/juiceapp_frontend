@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/juiceapp_frontend/static/css/main.7edf21c4.css",
+    "main.js": "/juiceapp_frontend/static/js/main.9dd61450.js",
+    "static/js/787.1cf224f5.chunk.js": "/juiceapp_frontend/static/js/787.1cf224f5.chunk.js",
+    "static/media/admin-background.jpeg": "/juiceapp_frontend/static/media/admin-background.f9567348c80aa7de6b7c.jpeg",
+    "static/media/logo_coca_cora.jpeg": "/juiceapp_frontend/static/media/logo_coca_cora.4f5e92a92c271428be4c.jpeg",
+    "index.html": "/juiceapp_frontend/index.html",
+    "main.7edf21c4.css.map": "/juiceapp_frontend/static/css/main.7edf21c4.css.map",
+    "main.9dd61450.js.map": "/juiceapp_frontend/static/js/main.9dd61450.js.map",
+    "787.1cf224f5.chunk.js.map": "/juiceapp_frontend/static/js/787.1cf224f5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7edf21c4.css",
+    "static/js/main.9dd61450.js"
+  ]
+}
