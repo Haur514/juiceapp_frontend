@@ -1,9 +1,9 @@
 import React from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
-import "./UserAddPane.css"
+import "./ItemAdd.css"
 
-function UserAddPane(){
+function ItemAdd(){
     const options = [
         { value: 'value1', label: '値1'},
         { value: 'value2', label: '値2'},
@@ -11,7 +11,7 @@ function UserAddPane(){
       ]
 
     return(
-        <div className="UserAddPane">
+        <div className="ItemAdd">
                 <label>
                     <div>アイコン：</div>
                 </label>
@@ -20,12 +20,10 @@ function UserAddPane(){
                     <input type="text" name="name" />
                 </label>
                 <label>
-                    属性：
+                    カテゴリ：
                     <select name="new-user-attribute">
-                        <option value="teature">Teature</option>
-                        <option value="m2">M2</option>
-                        <option value="m1">M1</option>
-                        <option value="b4">B4</option>
+                        <option value="Juice">Juice</option>
+                        <option value="Food">Food</option>
                     </select>
                 </label>
                 <label>
@@ -52,4 +50,4 @@ function UserAddPane(){
     );
 }
 
-export default UserAddPane;
+export default ItemAdd;

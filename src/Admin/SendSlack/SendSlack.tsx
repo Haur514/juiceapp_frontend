@@ -1,9 +1,9 @@
 import React from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
-import "./UserAddPane.css"
+import "./SendSlack.css"
 
-function UserAddPane(){
+function SendSlack(){
     const options = [
         { value: 'value1', label: '値1'},
         { value: 'value2', label: '値2'},
@@ -11,7 +11,7 @@ function UserAddPane(){
       ]
 
     return(
-        <div className="UserAddPane">
+        <div className="SendSlack">
                 <label>
                     <div>アイコン：</div>
                 </label>
@@ -52,4 +52,4 @@ function UserAddPane(){
     );
 }
 
-export default UserAddPane;
+export default SendSlack;

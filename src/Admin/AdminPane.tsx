@@ -3,6 +3,11 @@ import "./AdminPane.css";
 import backgroundImg from "./../image/background/admin-background.jpeg"
 import PullDownMenu from "../component/PullDownMenu";
 import UserAddPane from "./UserAdd/UserAddPane";
+import UserDelete from "./UserDelete/UserDelete";
+import ItemAddPane from "./ItemAdd/ItemAdd";
+import SendSlack from "./SendSlack/SendSlack";
+import UnpaidMember from "./UnpaidMember/UnpaidMember";
+import ItemPane from "../HomePage/Item/ItemPane";
 
 function userAddClicked(is_user_add_pulldown_visible,setUserAddVisivility){
     setUserAddVisivility(!is_user_add_pulldown_visible);
@@ -36,19 +41,38 @@ function Admin(){
                     }
                     />
                 <PullDownMenu 
+                    summary="ユーザの削除"
+                    children={
+                        <UserDelete/>
+                    }
+                    />
+                <PullDownMenu 
                     summary="アイテムの登録"
                     onClick={itemAddClicked}
-                    children={<div>hoge</div>}
+                    children={
+                        <ItemAddPane/>
+                    }
+                    />
+                <PullDownMenu 
+                    summary="アイテムの削除"
+                    onClick={itemAddClicked}
+                    children={
+                        <div>hoge</div>
+                    }
                     />
                 <PullDownMenu 
                     summary="slackへの通知"
                     onClick={slackSendClicked}
-                    children={<div>hoge</div>}
+                    children={
+                        <SendSlack/>
+                    }
                     />
                 <PullDownMenu 
                     summary="金額未払い者の管理"
                     onClick={slackSendClicked}
-                    children={<div>hoge</div>}
+                    children={
+                        <UnpaidMember/>
+                    }
                     />
             </div>
         </div>

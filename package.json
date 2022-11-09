@@ -1,6 +1,7 @@
 {
   "name": "juiceapp_frontend",
   "version": "0.1.0",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -11,22 +12,27 @@
     "@types/node": "^16.18.2",
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
+    "build": "^0.1.4",
     "chart.js": "^3.9.1",
     "faker": "^6.6.6",
+    "npm": "^8.19.3",
     "react": "^18.2.0",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "react-spring": "^9.5.5",
     "react-tabs": "^5.1.0",
+    "run": "^1.4.0",
+    "start": "^5.1.0",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "cross-env PUBLIC_URL=/juiceapp_frontend react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -47,6 +53,8 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0"
+    "@faker-js/faker": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "gh-pages": "^4.0.0"
   }
 }
