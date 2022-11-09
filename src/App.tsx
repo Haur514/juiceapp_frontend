@@ -6,6 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Graph from './Graph/Graph';
 import AdminPane from './Admin/AdminPane';
+import Fetch from './util/fetch/Fetch';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             <Tab>Home</Tab>
             <Tab>Graph</Tab>
             <Tab>Admin</Tab>
+            <Tab>Debug</Tab>
         </TabList>
         <TabPanel>
             <HomePageParent/>
@@ -24,6 +26,9 @@ function App() {
         </TabPanel>
         <TabPanel>
             <AdminPane />
+        </TabPanel>
+        <TabPanel>
+            <Fetch/>
         </TabPanel>
     </Tabs>
   );
