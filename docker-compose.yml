@@ -1,3 +1,13 @@
+version: '3.9'
+
+volumes:
+  postgres_volume:
+    driver_opts:
+      type: none
+      device: ./dbdata
+      o: bind
+
+
 services:
   frontend:
     build:
@@ -27,16 +37,50 @@ services:
     tty: true
     ports:
       - 80:3000
-    # command: >
-    #   npm install
-    #   npm start
+    command: >
+      bash -c "npm install &&
+      npm start"
 
-  # backend:
-  #   build:
-  #     context: ./backend/
-  #   working_dir: /backend/
-  #   image: juiceapp_backend
-  #   volumes:
-  #     - type: bind
-  #       source: ./backend/dbdata/
-  #       target: /backend/dbdata/
+
+  postgresql:
+    container_name: postgresql
+    build: ./backend/postgresql
+    ports:
+      - 5432:5432
+    volumes:
+      - ./backend/dbdata:/var/lib/postgresql/data
+      - ./backend/script/init:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: test-db
+    restart: always
+
+
+  backend:
+    image: eclipse-temurin:17-jdk-focal
+    ports:
+      - 55050:5050
+    tty: true
+    working_dir: /backend/
+    volumes:
+      - type: bind
+        source: ./backend/src
+        target: /backend/src
+      - type: bind
+        source: ./backend/gradle
+        target: /backend/gradle/
+      - type: bind
+        source: ./backend/gradlew
+        target: /backend/gradlew
+      - type: bind
+        source: ./backend/build.gradle
+        target: /backend/build.gradle
+      - type: bind
+        source: ./backend/settings.gradle
+        target: /backend/settings.gradle
+    depends_on:
+      - postgresql
+    command:
+      - ./gradlew
+      - bootRun
