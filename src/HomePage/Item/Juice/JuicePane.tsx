@@ -5,7 +5,6 @@ import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 
 const juices_list = ["CocaCora","Fanta","Water","GogoTea-Milk","GogoTea-Lemon","Gogotea-straight"];
 
-
 function JuicePane(props){
     return(
         <div className="JuicePane">

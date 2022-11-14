@@ -6,7 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Graph from './Graph/Graph';
 import AdminPane from './Admin/AdminPane';
-import Fetch from './util/fetch/Fetch';
+import HistoryFetch from './util/fetch/HistoryFetch';
 
 
 function App() {
@@ -28,7 +28,7 @@ function App() {
             <AdminPane />
         </TabPanel>
         <TabPanel>
-            <Fetch/>
+            <HistoryFetch/>
         </TabPanel>
     </Tabs>
   );
