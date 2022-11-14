@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import './ItemPane.css';
 import FoodPane from './Food/FoodPane'
 import JuicePane from "./Juice/JuicePane";
-import HistoryPane from "./History/HistoryPane";
+import HistoryPane from "../History/HistoryPane";
 import PopUpMenu from "./PopUpMenu";
 
 import LogoCora from "./../../image/logo_coca_cora.jpeg"

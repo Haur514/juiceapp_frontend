@@ -1,8 +1,8 @@
 import React from "react";
 import './HistoryCard.css';
-import ItemCard from "../../../component/ItemCard";
+import ItemCard from "../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
-import Button from "../../../component/Button";
+import Button from "../../component/Button";
 
 function HistoryCard(props){
     return(

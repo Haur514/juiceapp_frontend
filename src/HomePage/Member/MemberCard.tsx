@@ -3,23 +3,27 @@ import './MemberCard.css';
 import Button from "./../../component/Button";
 import HarukaIcon from "./../../image/userimg/haruka-icon.png"
 
+const default_member_card_color: string = "#14001a";
+const selected_member_card_color: string = "#166a88";
+const font_color: string = "white";
+
 function MemberCard(props){
     return(
         <Button
-            border="solid 1px black"
-            color={props.selected?"#121258":"#FFC039"}
+            border="solid 1px white"
+            color={props.selected?selected_member_card_color:default_member_card_color}
             height = "15%"
             width = "100%"
             onClick={() => props.setValue(props.name)}
             radius = "0%"
-            fontColor={props.selected?"#FFC039":"#121258"}
+            fontColor={font_color}
             children = {
                 <div className="MemberCard"> 
                     <img src={HarukaIcon}/>
                     {props.name}
                 </div>
             }
-            fontSize = "50px"
+            fontSize = "3em"
         />
     );
 }

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import './HistoryPane.css';
-import ItemCard from "../../../component/ItemCard";
+import ItemCard from "../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 import HistoryCard from "./HistoryCard";
-import HistoryEntity from "../../../entity/HistoryEntity";
+import HistoryEntity from "../../entity/HistoryEntity";
 
 const fetchHistoryData = async (histories,setHistories) =>{
     const inputdata = await fetch(`http://localhost/backend/history?name=haruka`, {

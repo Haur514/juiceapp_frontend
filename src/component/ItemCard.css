@@ -6,12 +6,31 @@
     border:0px;
     border-radius: 10px;
     grid-template-rows: 80% 20%;
-    font-size: 1.5rem;
+    font-size: 2em;
     margin-left:0.5em;
     margin-right:0.5em;
     margin-top:0.5em;
     margin-bottom: 0.5em;
     flex-shrink: 0;
+}
+
+
+.ItemCard:hover{
+    animation-name: ItemCard-hover;
+    animation-duration:.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes ItemCard-hover{
+    0% {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .ItemCard img{
