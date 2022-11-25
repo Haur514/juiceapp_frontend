@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import MemberPane from "./Member/MemberPane";
 import ItemPane from "./Item/ItemPane";
 import "./HomePageParent.css";
+import { setTextRange } from "typescript";
 
 let selected_member: string = "haruka";
 
