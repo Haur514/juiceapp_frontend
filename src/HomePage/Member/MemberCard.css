@@ -14,29 +14,23 @@
     border-radius: 50%;
 }
 
-/* .MemberCard:hover{
+.MemberCard img:hover{
     animation-name: MemberCard-hover;
-    animation-duration:.2s;
+    animation-duration:2s;
     animation-fill-mode: forwards;
-} */
+}
 
 @keyframes MemberCard-hover{
     0% {
         transform: scale(1);
         transform: rotate(0deg);
     }
-    25% {
-        transform: rotate(5deg);
-    }
-    50%{
-        transform: scale(0.95);
-    }
-    75%{
-        transform: rotate(-5deg);
-    }
+    /* 25% {
+        transform: rotate(360deg);
+    } */
     100% {
         transform: scale(1);
-        transform: rotate(0deg);
+        transform: rotate(1440deg);
     }
 }
 
