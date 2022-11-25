@@ -14,11 +14,11 @@
     border-radius: 50%;
 }
 
-.MemberCard:hover{
+/* .MemberCard:hover{
     animation-name: MemberCard-hover;
     animation-duration:.2s;
     animation-fill-mode: forwards;
-}
+} */
 
 @keyframes MemberCard-hover{
     0% {

@@ -5,8 +5,8 @@ import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 import HistoryCard from "./HistoryCard";
 import HistoryEntity from "../../entity/HistoryEntity";
 
-const fetchHistoryData = async (histories,setHistories) =>{
-    const inputdata = await fetch(`http://localhost/backend/history?name=haruka`, {
+const fetchHistoryData = async (histories,selectedMember: string,setHistories) =>{
+    const inputdata = await fetch(`http://localhost/backend/history?name=${selectedMember}`, {
         method: 'GET',
         mode: 'cors'
     })
@@ -26,13 +26,12 @@ const fetchHistoryData = async (histories,setHistories) =>{
 }
 
 
-const history_list = ["PotatoChips","Rice","Pasta","Dagashi"];
 function HistoryPane(props){
 
     const [histories, setHistories] = useState([]);
 
     useEffect(() => {
-        fetchHistoryData(histories,setHistories);
+        fetchHistoryData(histories,props.selectedMember,setHistories);
     },[])
 
     return(

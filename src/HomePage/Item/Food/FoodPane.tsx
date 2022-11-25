@@ -3,13 +3,12 @@ import './FoodPane.css';
 import ItemCard from "../../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 
-const food_list = ["PotatoChips","Rice","Pasta","Dagashi"];
 function FoodPane(props){
     return(
         <div className="FoodPane">
             <div className="Category">Food</div>
             <div className="FoodPane-flex">
-            {food_list.map((food) => {
+            {props.foodList.map((food) => {
                 return(
                 <ItemCard
                     color={props.selected?"#121258":"#FFC039"}

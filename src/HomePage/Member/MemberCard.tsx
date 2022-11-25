@@ -18,7 +18,7 @@ function MemberCard(props){
             radius = "0%"
             fontColor={font_color}
             children = {
-                <div className="MemberCard"> 
+                <div className={`MemberCard ${props.selected?"selected":"selected"}`}> 
                     <img src={HarukaIcon}/>
                     {props.name}
                 </div>
