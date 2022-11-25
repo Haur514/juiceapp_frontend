@@ -51,7 +51,7 @@ function ItemPane(props){
                 name={props.selectedItem}
                 visible={is_popup_visible}
                 setPopUpVisivility={setPopUpVisivility}
-                imgSrc={logoDictionary[props.selectedItem]}/>
+                imgSrc={logoDictionary[props.selectedItem]}
                 selectedMember={props.selectedMember}
                 selectedItem={props.selectedItem}
                 setSumPurchased={props.setSumPurchased}/>
