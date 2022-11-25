@@ -7,19 +7,19 @@ import Button from "../../component/Button";
 function HistoryCard(props){
     return(
         <div className="HistoryCard">
-            <span className="history-date">{props.date}</span>
-            <span className="history-purchasedItem">{props.purchasedItem}</span>
-            <span className="history-money">{props.money}円</span>
+            <div className="history-date">{props.date}</div>
+            <div className="history-purchasedItem">{props.purchasedItem}</div>
+            <div className="history-money">{props.money}円</div>
             <div className="cancel-button">
                 <Button
                     border = "solid 1px black"
-                    color = "darkred"
+                    color = "red"
                     onClick= {() => {
                         alert("OK");
                     }}
                     radius = "0.2em"
                     fontColor = "white"
-                    height="2em"
+                    height="100%"
                 >
                     Cancel
                 </Button>
