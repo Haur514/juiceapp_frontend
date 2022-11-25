@@ -17,7 +17,7 @@ function FoodPane(props){
                         props.setPopUpVisivility(true);
                     }}
                     name = {food}
-                    imgSrc = {LogoCocaCora}
+                    imgSrc = {props.logoDictionary[food]}
                     width = "100px"
                 />
                 )

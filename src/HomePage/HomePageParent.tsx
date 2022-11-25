@@ -8,11 +8,11 @@ let selected_member: string = "haruka";
 
 function HomePageParent(){
 
-    const [selectedMember, setSelectedMember] = useState("");
+    const [selectedMember, setSelectedMember] = useState("px0047ex7");
     const [selectedItem,setSelectedItem] = useState("");
     const [memberList,setMemberList] = useState(["haruka","iwase","takesige","mihara","ishino","fumiya","kaichi","kubo","kaimor"]);
-    const [juiceList,setJuiceList] = useState(["CocaCora","Fanta","Water","GogoTea-Milk","GogoTea-Lemon","Gogotea-straight"]);
-    const [foodList,setFoodList] = useState(["PotatoChips","Rice","Pasta","Dagashi"]);
+    const [juiceList,setJuiceList] = useState(["CocaCora","Fanta","Water","GogoTea"]);
+    const [foodList,setFoodList] = useState(["PotatoChips","Dagashi"]);
 
 
     
