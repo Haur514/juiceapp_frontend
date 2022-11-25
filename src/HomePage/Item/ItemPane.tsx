@@ -3,7 +3,7 @@ import './ItemPane.css';
 import FoodPane from './Food/FoodPane'
 import JuicePane from "./Juice/JuicePane";
 import HistoryPane from "../History/HistoryPane";
-import PopUpMenu from "./PopUpMenu";
+import PopUpMenu from "./PopUpMenu/PopUpMenu";
 
 import LogoCora from "./../../image/logo_coca_cora.jpeg"
 import LogoFanta from "./../../image/logo_fanta.jpeg"
@@ -45,12 +45,16 @@ function ItemPane(props){
             <HistoryPane 
                 setValue={props.setSelectedItem}
                 setPopUpVisivility={setPopUpVisivility}
-                selectedMember={props.selectedMember}/>
+                selectedMember={props.selectedMember}
+                sumPurchased={props.sumPurchased}/>
             <PopUpMenu 
                 name={props.selectedItem}
                 visible={is_popup_visible}
                 setPopUpVisivility={setPopUpVisivility}
                 imgSrc={logoDictionary[props.selectedItem]}/>
+                selectedMember={props.selectedMember}
+                selectedItem={props.selectedItem}
+                setSumPurchased={props.setSumPurchased}/>
         </div>
     );
 }

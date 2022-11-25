@@ -25,7 +25,7 @@ function HistoryPane(props){
 
     useEffect(() => {
         fetchHistoryData(props.selectedMember,setHistories);
-    },[props.selectedMember])
+    },[props.selectedMember,props.sumPurchased])
     
 
     return(
