@@ -3,7 +3,7 @@ import './ItemPane.css';
 import FoodPane from './Food/FoodPane'
 import JuicePane from "./Juice/JuicePane";
 import HistoryPane from "../History/HistoryPane";
-import PopUpMenu from "./PopUpMenu";
+import PopUpMenu from "./PopUpMenu/PopUpMenu";
 
 import LogoCora from "./../../image/logo_coca_cora.jpeg"
 
@@ -34,6 +34,8 @@ function ItemPane(props){
                 name={props.selectedItem}
                 visible={is_popup_visible}
                 setPopUpVisivility={setPopUpVisivility}
+                selectedMember={props.selectedMember}
+                selectedItem={props.selectedItem}
                 imgSrc={LogoCora}/>
         </div>
     );

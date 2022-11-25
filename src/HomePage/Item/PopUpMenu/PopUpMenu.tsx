@@ -1,10 +1,19 @@
 import React, { useState } from "react";
-import Button from "../../component/Button";
+import Button from "../../..//component/Button";
 import './PopUpMenu.css';
 
 // let selected_item: SVGStringList = "";
 
 function PopUpMenu(props){
+
+    const purchaseItem = async () =>{
+        alert(props.selectedMember);
+        const inputdata = await fetch(`http://localhost/backend/history/add?name=${props.selectedMember}&item=${props.selectedItem}&price=100`, {
+        method: 'GET',
+        mode: 'cors'
+    })
+        closePopUp();
+    }
 
     const closePopUp = () => {
         props.setPopUpVisivility(false);
@@ -36,7 +45,7 @@ function PopUpMenu(props){
                     color="darkred"
                     height = "2em"
                     width = "40%"
-                    onClick={() => closePopUp()}
+                    onClick={() => purchaseItem()}
                     radius = "0.2em"
                     fontColor="white"
                     children = {
