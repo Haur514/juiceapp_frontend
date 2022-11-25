@@ -3,14 +3,12 @@ import './JuicePane.css';
 import ItemCard from "../../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 
-const juices_list = ["CocaCora","Fanta","Water","GogoTea-Milk","GogoTea-Lemon","Gogotea-straight"];
-
 function JuicePane(props){
     return(
         <div className="JuicePane">
             <div className="Category">Juice</div>
             <div className="JuicePane-flex">
-            {juices_list.map((juice) => {
+            {props.juiceList.map((juice) => {
                 return(
                 <ItemCard
                 color={props.selected?"#121258":"#FFC039"}
@@ -19,7 +17,7 @@ function JuicePane(props){
                     props.setPopUpVisivility(true);
                 }}
                 name = {juice}
-                imgSrc = {LogoCocaCora}
+                imgSrc = {props.logoDictionary[juice]}
                 width = "100px"
                 />
                 )
