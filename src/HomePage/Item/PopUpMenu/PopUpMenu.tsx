@@ -7,11 +7,11 @@ import './PopUpMenu.css';
 function PopUpMenu(props){
 
     const purchaseItem = async () =>{
-        alert(props.selectedMember);
         const inputdata = await fetch(`http://localhost/backend/history/add?name=${props.selectedMember}&item=${props.selectedItem}&price=100`, {
         method: 'GET',
         mode: 'cors'
-    })
+        });
+        props.setSumPurchased((prev) => prev+1);
         closePopUp();
     }
 

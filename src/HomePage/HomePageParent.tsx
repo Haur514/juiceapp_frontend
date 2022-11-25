@@ -14,6 +14,11 @@ function HomePageParent(){
     const [juiceList,setJuiceList] = useState(["CocaCora","Fanta","Water","GogoTea-Milk","GogoTea-Lemon","Gogotea-straight"]);
     const [foodList,setFoodList] = useState(["PotatoChips","Rice","Pasta","Dagashi"]);
 
+    // 再レンダリング用のトリガとして利用するステート
+    // もう少し賢い実装がありそうなので，TODO としておく
+    // TODO
+    const [sumPurchased,setSumPurchased] = useState(0);
+
 
     
     return(
@@ -27,7 +32,9 @@ function HomePageParent(){
                 selectedItem={selectedItem}
                 juiceList={juiceList}
                 foodList={foodList}
-                selectedMember={selectedMember}/>
+                selectedMember={selectedMember}
+                setSumPurchased={setSumPurchased}
+                sumPurchased={sumPurchased}/>
         </div>
     );
 }
