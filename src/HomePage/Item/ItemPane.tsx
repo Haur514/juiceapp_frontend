@@ -33,12 +33,12 @@ function ItemPane(props){
     return(
         <div className="ItemPane">
             <JuicePane 
-                setValue={props.setSelectedItem} 
+                setSelectedItem={props.setSelectedItem} 
                 setPopUpVisivility={setPopUpVisivility}
                 juiceList={props.juiceList}
                 logoDictionary={logoDictionary}/>
             <FoodPane 
-                setValue={props.setSelectedItem} 
+                setSelectedItem={props.setSelectedItem} 
                 setPopUpVisivility={setPopUpVisivility}
                 foodList={props.foodList}
                 logoDictionary={logoDictionary}/>

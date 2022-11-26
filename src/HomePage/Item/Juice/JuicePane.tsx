@@ -12,11 +12,11 @@ function JuicePane(props){
                 <ItemCard
                 color={props.selected?"#121258":"#FFC039"}
                 onClick={() => {
-                    props.setValue(juice);
+                    props.setSelectedItem(juice.name);
                     props.setPopUpVisivility(true);
                 }}
-                name = {juice}
-                imgSrc = {props.logoDictionary[juice]}
+                name = {juice.name}
+                imgSrc = {props.logoDictionary[juice.name]}
                 width = "100px"
                 />
                 )
