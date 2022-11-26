@@ -4,9 +4,13 @@ import ItemCard from "../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 import HistoryCard from "./HistoryCard";
 import HistoryEntity from "../../entity/HistoryEntity";
+import { hasProps } from "@react-spring/core/dist/declarations/src/helpers";
 
 const fetchHistoryData = async (selectedMember: string,setHistories) =>{
     let data = [];
+    if(selectedMember==""){
+        return;
+    }
 
     const inputdata = await fetch(`http://localhost/backend/history?name=${selectedMember}`, {
         method: 'GET',

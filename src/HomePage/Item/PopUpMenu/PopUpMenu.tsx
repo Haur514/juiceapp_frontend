@@ -5,8 +5,11 @@ import './PopUpMenu.css';
 // let selected_item: SVGStringList = "";
 
 function PopUpMenu(props){
-
+    
     const purchaseItem = async () =>{
+        if(props.selectedMember==""){
+            return;
+        }
         const inputdata = await fetch(`http://localhost/backend/history/add?name=${props.selectedMember}&item=${props.selectedItem}&price=100`, {
         method: 'GET',
         mode: 'cors'
