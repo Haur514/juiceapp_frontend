@@ -40,4 +40,5 @@
     width:100%; */
     grid-row: 1/ 1;
     object-fit: cover;
+    border-radius: 3%;
 }
