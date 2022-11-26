@@ -6,13 +6,13 @@ import HistoryCard from "./HistoryCard";
 import HistoryEntity from "../../entity/HistoryEntity";
 import { hasProps } from "@react-spring/core/dist/declarations/src/helpers";
 
-const fetchHistoryData = async (selectedMember: string,setHistories) =>{
+const fetchHistoryData = async (selectedMemberId: string,setHistories) =>{
     let data = [];
-    if(selectedMember==""){
+    if(selectedMemberId==""){
         return;
     }
 
-    const inputdata = await fetch(`http://localhost/backend/history?name=${selectedMember}`, {
+    const inputdata = await fetch(`http://localhost/backend/history?name=${selectedMemberId}`, {
         method: 'GET',
         mode: 'cors'
     })
@@ -28,8 +28,8 @@ function HistoryPane(props){
     const [histories, setHistories] = useState([]);
 
     useEffect(() => {
-        fetchHistoryData(props.selectedMember,setHistories);
-    },[props.selectedMember,props.sumPurchased])
+        fetchHistoryData(props.selectedMemberId,setHistories);
+    },[props.selectedMemberId,props.sumPurchased])
     
 
     return(

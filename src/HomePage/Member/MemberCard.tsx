@@ -14,13 +14,13 @@ function MemberCard(props){
             color={props.selected?selected_member_card_color:default_member_card_color}
             height = "15%"
             width = "100%"
-            onClick={() => props.setValue(props.name)}
+            onClick={() => props.setSelectedMemberId(props.member.name)}
             radius = "0%"
             fontColor={font_color}
             children = {
                 <div className={`MemberCard ${props.selected?"selected":"selected"}`}> 
                     <img src={DefaultIcon}/>
-                    {props.name}
+                    {props.member.displayName}
                 </div>
             }
             fontSize = "3em"

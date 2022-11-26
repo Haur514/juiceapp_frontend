@@ -4,7 +4,6 @@ import ItemPane from "./Item/ItemPane";
 import "./HomePageParent.css";
 import { setTextRange } from "typescript";
 
-let selected_member: string = "haruka";
 
 const fetchMemberData = async (setMemberList) =>{
     const inputdata = await fetch(`http://localhost/backend/member`, {
@@ -19,7 +18,7 @@ const fetchMemberData = async (setMemberList) =>{
 
 function HomePageParent(){
 
-    const [selectedMember, setSelectedMember] = useState("");
+    const [selectedMemberId, setSelectedMemberId] = useState("");
     const [selectedItem,setSelectedItem] = useState("");
     const [memberList,setMemberList] = useState([]);
     const [juiceList,setJuiceList] = useState(["CocaCora","Fanta","Water","GogoTea"]);
@@ -38,15 +37,15 @@ function HomePageParent(){
     return(
         <div className="HomePageParent">
             <MemberPane 
-                setSelectedMember={setSelectedMember}
-                selectedMember={selectedMember}
+                setSelectedMemberId={setSelectedMemberId}
+                selectedMemberId={selectedMemberId}
                 memberList={memberList}/>
             <ItemPane
                 setSelectedItem={setSelectedItem}
                 selectedItem={selectedItem}
                 juiceList={juiceList}
                 foodList={foodList}
-                selectedMember={selectedMember}
+                selectedMemberId={selectedMemberId}
                 setSumPurchased={setSumPurchased}
                 sumPurchased={sumPurchased}/>
         </div>

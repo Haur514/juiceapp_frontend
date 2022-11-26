@@ -7,10 +7,10 @@ import './PopUpMenu.css';
 function PopUpMenu(props){
     
     const purchaseItem = async () =>{
-        if(props.selectedMember==""){
+        if(props.selectedMemberId==""){
             return;
         }
-        const inputdata = await fetch(`http://localhost/backend/history/add?name=${props.selectedMember}&item=${props.selectedItem}&price=100`, {
+        const inputdata = await fetch(`http://localhost/backend/history/add?name=${props.selectedMemberId}&item=${props.selectedItem}&price=100`, {
         method: 'GET',
         mode: 'cors'
         });

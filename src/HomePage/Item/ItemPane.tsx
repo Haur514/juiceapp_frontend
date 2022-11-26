@@ -45,14 +45,14 @@ function ItemPane(props){
             <HistoryPane 
                 setValue={props.setSelectedItem}
                 setPopUpVisivility={setPopUpVisivility}
-                selectedMember={props.selectedMember}
+                selectedMemberId={props.selectedMemberId}
                 sumPurchased={props.sumPurchased}/>
             <PopUpMenu 
                 name={props.selectedItem}
                 visible={is_popup_visible}
                 setPopUpVisivility={setPopUpVisivility}
                 imgSrc={logoDictionary[props.selectedItem]}
-                selectedMember={props.selectedMember}
+                selectedMemberId={props.selectedMemberId}
                 selectedItem={props.selectedItem}
                 setSumPurchased={props.setSumPurchased}/>
         </div>

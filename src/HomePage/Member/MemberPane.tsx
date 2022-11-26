@@ -17,9 +17,9 @@ function MemberPane(props){
             .map((member) => {
                 return(
                     <MemberCard 
-                    selected ={props.selectedMember==member.displayName?true:false}
-                    name={member.displayName}
-                    setValue = {props.setSelectedMember}/>
+                    selected ={props.selectedMemberId==member.name?true:false}
+                    member={member}
+                    setSelectedMemberId = {props.setSelectedMemberId}/>
                 );
             })}
             <div className="attribute">
@@ -32,9 +32,9 @@ function MemberPane(props){
             .map((member) => {
                 return(
                     <MemberCard 
-                    selected ={props.selectedMember==member.displayName?true:false}
-                    name={member.displayName}
-                    setValue = {props.setSelectedMember}/>
+                    selected ={props.selectedMemberId==member.name?true:false}
+                    member={member}
+                    setSelectedMemberId = {props.setSelectedMemberId}/>
                 );
             })}
             <div className="attribute">
@@ -47,9 +47,9 @@ function MemberPane(props){
             .map((member) => {
                 return(
                     <MemberCard 
-                    selected ={props.selectedMember==member.displayName?true:false}
-                    name={member.displayName}
-                    setValue = {props.setSelectedMember}/>
+                    selected ={props.selectedMemberId==member.name?true:false}
+                    member={member}
+                    setSelectedMemberId = {props.setSelectedMemberId}/>
                 );
             })}
         </div>
