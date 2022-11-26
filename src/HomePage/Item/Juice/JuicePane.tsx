@@ -1,7 +1,6 @@
 import React from "react";
 import './JuicePane.css';
 import ItemCard from "../../../component/ItemCard";
-import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 
 function JuicePane(props){
     return(
