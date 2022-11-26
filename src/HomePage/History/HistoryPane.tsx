@@ -20,8 +20,8 @@ const fetchHistoryData = async (selectedMember: string,setHistories) =>{
     .then(histories => {
         setHistories(histories);
     });
+    
 }
-
 
 function HistoryPane(props){
 

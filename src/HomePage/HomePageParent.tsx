@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MemberPane from "./Member/MemberPane";
 import ItemPane from "./Item/ItemPane";
 import "./HomePageParent.css";
@@ -6,11 +6,22 @@ import { setTextRange } from "typescript";
 
 let selected_member: string = "haruka";
 
+const fetchMemberData = async (setMemberList) =>{
+    const inputdata = await fetch(`http://localhost/backend/member`, {
+        method: 'GET',
+        mode: 'cors'
+    })
+    .then(res => res.json())
+    .then(members => {
+        setMemberList(members);
+    });
+}
+
 function HomePageParent(){
 
     const [selectedMember, setSelectedMember] = useState("");
     const [selectedItem,setSelectedItem] = useState("");
-    const [memberList,setMemberList] = useState(["haruka","iwase","takesige","mihara","ishino","fumiya","kaichi","kubo","kaimor"]);
+    const [memberList,setMemberList] = useState([]);
     const [juiceList,setJuiceList] = useState(["CocaCora","Fanta","Water","GogoTea"]);
     const [foodList,setFoodList] = useState(["PotatoChips","Dagashi"]);
 
@@ -19,6 +30,9 @@ function HomePageParent(){
     // TODO
     const [sumPurchased,setSumPurchased] = useState(0);
 
+    useEffect(() => {
+        fetchMemberData(setMemberList);
+    },[])
 
     
     return(
