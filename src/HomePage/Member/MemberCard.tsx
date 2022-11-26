@@ -1,7 +1,7 @@
 import React from "react";
 import './MemberCard.css';
 import Button from "./../../component/Button";
-import HarukaIcon from "./../../image/userimg/haruka-icon.png"
+import DefaultIcon from "./../../image/userimg/defaultimg.png"
 
 const default_member_card_color: string = "#14001a";
 const selected_member_card_color: string = "#166a88";
@@ -19,7 +19,7 @@ function MemberCard(props){
             fontColor={font_color}
             children = {
                 <div className={`MemberCard ${props.selected?"selected":"selected"}`}> 
-                    <img src={HarukaIcon}/>
+                    <img src={DefaultIcon}/>
                     {props.name}
                 </div>
             }
