@@ -1,27 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
 import "./UserAddPane.css"
 
-function UserAddPane(){
-    const options = [
-        { value: 'value1', label: '値1'},
-        { value: 'value2', label: '値2'},
-        { value: 'value2', label: '値3'},
-      ]
+const addUser = async (userId,displayName,attribute) =>{
+    const inputdata = await fetch(`http://localhost/backend/member/add?name=${userId}&displayName=${displayName}&attribute=${attribute}`, {
+    method: 'GET',
+    mode: 'cors'
+    });
+}
 
+function UserAddPane(){
+    const [userId,setUserId] = useState("");
+    const [displayName,setDisplayName] = useState("");
+    const [attribute,setAttribute] =  useState("");
     return(
         <div className="UserAddPane">
                 <label>
                     <div>アイコン：</div>
                 </label>
                 <label>
-                    名前：
-                    <input type="text" name="name" />
+                    ID:
+                    <input 
+                    type="text" 
+                    name="name" 
+                    value={userId}
+                    onChange={(event) => setUserId(event.target.value)}/>
+                </label>
+                <label>
+                    表示名:
+                    <input 
+                    type="text" 
+                    name="displayName" 
+                    value={displayName}
+                    onChange={(event) => setDisplayName(event.target.value)}/>
                 </label>
                 <label>
                     属性：
-                    <select name="new-user-attribute">
+                    <select 
+                    name="new-user-attribute" 
+                    value={attribute}
+                    onChange={(event) => setAttribute(event.target.value)}>
                         <option value="teature">Teature</option>
                         <option value="m2">M2</option>
                         <option value="m1">M1</option>
@@ -41,7 +60,10 @@ function UserAddPane(){
                     <Button
                         color="blue"
                         onClick={() =>{
-                            console.log("OK");
+                            console.log(userId);
+                            console.log(displayName);
+                            console.log(attribute);
+                            addUser(userId,displayName,attribute);
                         }}
                         fontColor="white"
                     >
