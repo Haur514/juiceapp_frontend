@@ -10,7 +10,7 @@ function PopUpMenu(props){
         if(props.selectedMemberId==""){
             return;
         }
-        const inputdata = await fetch(`http://localhost/backend/history/add?name=${props.selectedMemberId}&item=${props.selectedItem}&price=100`, {
+        const inputdata = await fetch(`http://localhost/backend/purchase?name=${props.selectedMemberId}&item=${props.selectedItem}`, {
         method: 'GET',
         mode: 'cors'
         });

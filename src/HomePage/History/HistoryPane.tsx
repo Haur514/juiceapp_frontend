@@ -5,6 +5,7 @@ import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 import HistoryCard from "./HistoryCard";
 import HistoryEntity from "../../entity/HistoryEntity";
 import { hasProps } from "@react-spring/core/dist/declarations/src/helpers";
+import { update } from "react-spring";
 
 const fetchHistoryData = async (selectedMemberId: string,setHistories) =>{
     let data = [];
@@ -30,6 +31,10 @@ function HistoryPane(props){
     useEffect(() => {
         fetchHistoryData(props.selectedMemberId,setHistories);
     },[props.selectedMemberId,props.sumPurchased])
+
+    const updateHistory = () =>{
+        fetchHistoryData(props.selectedMemberId,setHistories);
+    }
     
 
     return(
@@ -38,9 +43,8 @@ function HistoryPane(props){
             <div className="HistoryPane-flex">
             {histories.map(history=>
                 <HistoryCard 
-                    date={history.date}
-                    purchasedItem={history.item}
-                    money={history.price}/>
+                    history={history}
+                    updateHistory={updateHistory}/>
             )}
             </div>
         </div>
