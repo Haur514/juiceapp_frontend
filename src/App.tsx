@@ -4,6 +4,8 @@ import './App.css';
 import HomePageParent from './HomePage/HomePageParent';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Graph from './Graph/Graph';
 import AdminPane from './Admin/AdminPane';
 import HistoryFetch from './util/fetch/HistoryFetch';

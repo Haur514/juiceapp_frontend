@@ -20,9 +20,13 @@
 }
 .history-purchasedItem{
     margin-left:2em;
-    width:20%;
+    width:15%;
 }
 .history-money{
     margin-left:2em;
-    width:20%;
+    width:15%;
+}
+
+.history-cancel-toggle{
+    width:15%;
 }
