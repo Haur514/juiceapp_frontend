@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -39,26 +39,51 @@ export const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
+
+
+const fetchItemList = async (setItemList) => {
+  const inputdata = await fetch(`http://localhost/backend/item`, {
+      method: 'GET',
+      mode: 'cors'
+  })
+  .then(res => res.json())
+  .then(itemList => {
+      setItemList(itemList);
+  });
 };
 
+
+const setItemNameList = (itemList) =>{
+  let ret = {}
+  itemList.map((item)=>{
+    ret[item.name] = item.salesFigure;
+  })
+  return ret;
+}
+
 export default function Graph() {
+  const [itemList,setItemList] = useState([]);
+
+  useEffect(() =>{
+    fetchItemList(setItemList);
+    
+  },[])
+
+  let dict = setItemNameList(itemList);
+  const labels = Object.keys(dict)
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset 1',
+        data: labels.map((label) => dict[label]),
+        borderColor: 'rgb(255, 99, 132)',
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
+      }
+    ],
+  };
+
   return <Bar options={options} data={data} />;
 }

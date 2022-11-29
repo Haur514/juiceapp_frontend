@@ -15,3 +15,8 @@ cd juiceapp_frontend
 docker-compose up --build
 ```
 [localhost:80](http://localhost:80)にアクセスする．
+
+下記のコマンドで，デモ用のデータを入れることができます．
+```
+./init/init-database.sh
+```
