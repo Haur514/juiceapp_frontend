@@ -20,3 +20,6 @@ docker-compose up --build
 ```
 ./init/init-database.sh
 ```
+
+現在、docker起動スクリプトを実行しても、nginxがうまく起動されない問題が報告されています。
+当バグが発生した場合、dockerのほうからnginxを再度起動することで解決します、
