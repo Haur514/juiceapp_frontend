@@ -1,14 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import HomePageParent from './HomePage/HomePageParent';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Graph from './Graph/Graph';
+import React from 'react';
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import AdminPane from './Admin/AdminPane';
+import './App.css';
+import Chat from './Chat/Chat';
+import Graph from './Graph/Graph';
+import HomePageParent from './HomePage/HomePageParent';
 import HistoryFetch from './util/fetch/HistoryFetch';
+
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
             <Tab>Home</Tab>
             <Tab>Graph</Tab>
             <Tab>Admin</Tab>
+            <Tab>Chat</Tab>
             <Tab>Debug</Tab>
         </TabList>
         <TabPanel>
@@ -28,6 +29,9 @@ function App() {
         </TabPanel>
         <TabPanel>
             <AdminPane />
+        </TabPanel>
+        <TabPanel>
+            <Chat/>
         </TabPanel>
         <TabPanel>
             <HistoryFetch/>

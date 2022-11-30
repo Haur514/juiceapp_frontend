@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import MemberPane from "./Member/MemberPane";
-import ItemPane from "./Item/ItemPane";
 import "./HomePageParent.css";
-import { setTextRange } from "typescript";
-
+import ItemPane from "./Item/ItemPane";
+import MemberPane from "./Member/MemberPane";
 
 const fetchMemberList = async (setMemberList) =>{
     const inputdata = await fetch(`http://localhost/backend/member`, {
