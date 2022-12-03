@@ -4,7 +4,8 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import AdminPane from './Admin/AdminPane';
 import './App.css';
-import Chat from './Chat/Chat';
+import ChatPane from './Chat/ChatPane';
+import Chat from './Chat/ChatPane';
 import Graph from './Graph/Graph';
 import HomePageParent from './HomePage/HomePageParent';
 import HistoryFetch from './util/fetch/HistoryFetch';
@@ -31,7 +32,7 @@ function App() {
             <AdminPane />
         </TabPanel>
         <TabPanel>
-            <Chat/>
+            <ChatPane/>
         </TabPanel>
         <TabPanel>
             <HistoryFetch/>

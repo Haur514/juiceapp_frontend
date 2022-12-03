@@ -1,0 +1,34 @@
+.MessageBox{
+    display:inline;
+    position: relative;
+    display: inline-block;
+    margin: 1.5em 1.5em;
+    padding: 0.5em 0.5em;
+    min-width: 7em;
+    max-width: 100%;
+    color: #555;
+    font-size: 1em;
+    background: #bed9ff;
+    border-radius: 0.3em;
+    overflow-wrap: break-word;
+  }
+
+  .MessageBox::before {
+    content: "";
+    position: absolute;
+    top: .5em;
+    left: -1.2em;
+    border: .7em solid transparent;
+    border-right: .7em solid #bed9ff;
+    z-index: 0;
+  }
+
+  .ChatMessageComponent{
+    margin: 1em 0;
+    display: flex;
+    background-color: rgb(232, 232, 232);
+  }
+
+  .ChatMessageComponent img{
+    border-radius: 50%;
+  }
