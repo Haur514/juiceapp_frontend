@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ChatMessageComponent from "./ChatMessageComponent";
 import "./ChatPane.css";
 import DefaultIcon from "./../image/userimg/defaultimg.png"
+import ChatInputPane from "./input/ChatInputPane";
 
 
-const fetchMemberList = async (setMemberList) =>{
-    const inputdata = await fetch(`http://localhost/backend/member`, {
+const fetchMessagesList = async (setMessagesList) =>{
+    const inputdata = await fetch(`http://localhost/backend/chat`, {
         method: 'GET',
         mode: 'cors'
     })
     .then(res => res.json())
-    .then(members => {
-        setMemberList(members);
+    .then(messages => {
+        setMessagesList(messages);
     });
 }
 
 function Chat(){
 
+    const [messages,setMessagesList] = useState([]);
+
+    useEffect(() => {
+        fetchMessagesList(setMessagesList);
+    },[])
+
     return(
         <div className="ChatPane">
-            <ChatMessageComponent chatMessage="hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge"/>
-            <ChatMessageComponent chatMessage="hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge"/>
-            <ChatMessageComponent chatMessage="hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge"/>
-            <ChatMessageComponent chatMessage="hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge"/>
-            <ChatMessageComponent chatMessage="hogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehogehoge"/>
+
+            {messages.map(chat=>
+                <ChatMessageComponent 
+                chatMessage={chat.message}/>
+            )}
+            <ChatInputPane/>
         </div>
     );
 }
