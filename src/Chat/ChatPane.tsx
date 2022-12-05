@@ -20,9 +20,11 @@ function Chat(){
 
     const [messages,setMessagesList] = useState([]);
 
+    const [lastUpdated,setLastUpdated] = useState("");
+
     useEffect(() => {
         fetchMessagesList(setMessagesList);
-    },[])
+    },[lastUpdated])
 
     return(
         <div className="ChatPane">
@@ -31,7 +33,8 @@ function Chat(){
                 <ChatMessageComponent 
                 chatMessage={chat.message}/>
             )}
-            <ChatInputPane/>
+            <ChatInputPane
+                setLastUpdated={setLastUpdated}/>
         </div>
     );
 }

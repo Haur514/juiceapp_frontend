@@ -14,7 +14,7 @@ const addMessage = async (message) =>{
     });
 }
 
-function ChatInputPane(){
+function ChatInputPane(props){
     const [message,setMessage] = useState("");
 
     // useEffect(() => {
@@ -35,9 +35,11 @@ function ChatInputPane(){
             <Button 
             variant="outline-secondary" 
             id="button-addon2"
-            onClick={() =>{
-                addMessage(message)
+            onClick={async () =>{
+                await addMessage(message)
                 setMessage("")
+                let date = new Date();
+                props.setLastUpdated(date.getFullYear() + '/' + ('0' + (date.getMonth() + 1)).slice(-2) + '/' +('0' + date.getDate()).slice(-2) + ' ' +  ('0' + date.getHours()).slice(-2) + ':' + ('0' + date.getMinutes()).slice(-2) + ':' + ('0' + date.getSeconds()).slice(-2) + '.' + date.getMilliseconds())
             }}>
                 Button
             </Button>
