@@ -5,8 +5,8 @@ import JuicePane from "./Juice/JuicePane";
 import HistoryPane from "../History/HistoryPane";
 import PopUpMenu from "./PopUpMenu/PopUpMenu";
 
-import LogoCora from "./../../image/logo_coca_cora.jpeg"
-import LogoFanta from "./../../image/logo_fanta.jpeg"
+import LogoCora from "./../../image/logo_coca_cora.jpg"
+import LogoFanta from "./../../image/logo_fanta.jpg"
 import LogoWater from "./../../image/logo_water.jpeg"
 import LogoGogoTea from "./../../image/logo_tea.jpeg"
 import LogoPotechi from "./../../image/logo_potechi.jpeg"

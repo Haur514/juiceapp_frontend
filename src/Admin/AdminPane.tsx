@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./AdminPane.css";
-import backgroundImg from "./../image/background/admin-background.jpeg"
+import backgroundImg from "./../image/admin-background.jpeg"
 import PullDownMenu from "../component/PullDownMenu";
 import UserAddPane from "./UserAdd/UserAddPane";
 import UserDelete from "./UserDelete/UserDelete";
