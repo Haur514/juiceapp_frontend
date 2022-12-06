@@ -1,63 +1,63 @@
 import React, { useEffect, useState } from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
-import "./UserDelete.css"
+import "./ItemDelete.css"
 
 
-const fetchMemberList = async (setMemberList) =>{
-    const inputdata = await fetch(`http://localhost/backend/member`, {
+const fetchItemList = async (setItemList) =>{
+    const inputdata = await fetch(`http://localhost/backend/item`, {
         method: 'GET',
         mode: 'cors'
     })
     .then(res => res.json())
-    .then(members => {
-        setMemberList(members);
+    .then(items => {
+        setItemList(items);
     });
 }
 
-const deleteMember = async (member) =>{
-    await fetch(`http://localhost/backend/member/delete?name=${member}`,{
+const deleteItem = async (item) =>{
+    await fetch(`http://localhost/backend/item/delete?name=${item}`,{
         method: 'GET',
         mode: 'cors'
     })
 }
 
 function UserAddPane(){
-    const [memberList,setMemberList] = useState([]);
+    const [itemList,setItemList] = useState([]);
 
     useEffect(() => {
-        fetchMemberList(setMemberList);
+        fetchItemList(setItemList);
     },[])
 
     return(
-        <div className="UserDelete">
+        <div className="ItemDelete">
             <table border={1}>
                 <tr>
                     <th>
-                        ユーザ名
+                        アイテム名
                     </th>
                     <th>
-                        属性
+                        グルーピング
                     </th>
                     <th>
                         削除ボタン
                     </th>
                 </tr>
-                {memberList.map(member => 
+                {itemList.map(member => 
                     <tr>
                         <th>
-                        {member.displayName}
+                        {member.name}
                         </th>
                         <th>
-                            {member.attribute}
+                            {member.grouping}
                         </th>
                         <th>
                         <Button
                             color="gray"
                             radius="0.5em"
                             onClick={async () => {
-                                await deleteMember(member.name);
-                                await fetchMemberList(setMemberList);
+                                await deleteItem(member.name);
+                                await fetchItemList(setItemList);
                             }}
                             fontColor="white"
                         >

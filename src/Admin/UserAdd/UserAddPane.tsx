@@ -13,7 +13,7 @@ const addUser = async (userId,displayName,attribute) =>{
 function UserAddPane(){
     const [userId,setUserId] = useState("");
     const [displayName,setDisplayName] = useState("");
-    const [attribute,setAttribute] =  useState("");
+    const [attribute,setAttribute] =  useState("teature");
     return(
         <div className="UserAddPane">
                 <label>
@@ -38,7 +38,8 @@ function UserAddPane(){
                 <label>
                     属性：
                     <select 
-                    name="new-user-attribute" 
+                    name="new-user-attribute"
+                    defaultValue="teature" 
                     value={attribute}
                     onChange={(event) => setAttribute(event.target.value)}>
                         <option value="teature">Teature</option>
@@ -57,6 +58,8 @@ function UserAddPane(){
                     >
                         キャンセル
                     </Button>
+                </label>
+                <label>
                     <Button
                         color="blue"
                         onClick={() =>{

@@ -21,7 +21,7 @@ function SendSlack(){
                 </label>
                 <label>
                     属性：
-                    <select name="new-user-attribute">
+                    <select name="new-user-attribute" defaultValue="teature">
                         <option value="teature">Teature</option>
                         <option value="m2">M2</option>
                         <option value="m1">M1</option>

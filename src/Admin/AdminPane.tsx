@@ -8,6 +8,7 @@ import ItemAddPane from "./ItemAdd/ItemAdd";
 import SendSlack from "./SendSlack/SendSlack";
 import UnpaidMember from "./UnpaidMember/UnpaidMember";
 import ItemPane from "../HomePage/Item/ItemPane";
+import ItemDelete from "./ItemDelete/ItemDelete";
 
 function userAddClicked(is_user_add_pulldown_visible,setUserAddVisivility){
     setUserAddVisivility(!is_user_add_pulldown_visible);
@@ -57,7 +58,7 @@ function Admin(){
                     summary="アイテムの削除"
                     onClick={itemAddClicked}
                     children={
-                        <div>hoge</div>
+                        <ItemDelete />
                     }
                     />
                 <PullDownMenu 

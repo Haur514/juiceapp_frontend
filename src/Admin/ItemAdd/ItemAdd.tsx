@@ -15,7 +15,7 @@ function ItemAdd(){
     const [itemId,setItemId] = useState("");
     const [sellingPrice,setSellingPrice] = useState(0);
     const [costPrice,setCostPrice] =  useState(0);
-    const [grouping,setGrouping] = useState("");
+    const [grouping,setGrouping] = useState("juice");
     return(
         <div className="ItemAdd">
                 <label>
@@ -46,6 +46,7 @@ function ItemAdd(){
                     カテゴリ：
                     <select 
                     value={grouping}
+                    defaultValue="juice"
                     onChange={(event) => setGrouping(event.target.value)}>
                         <option value="juice">Juice</option>
                         <option value="food">Food</option>
