@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,9 +7,12 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { faker } from '@faker-js/faker';
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { faker } from "@faker-js/faker";
+
+import "./Graph.css";
+import { lstat } from "fs/promises";
 
 ChartJS.register(
   CategoryScale,
@@ -21,7 +24,7 @@ ChartJS.register(
 );
 
 export const options = {
-  indexAxis: 'y' as const,
+  indexAxis: "y" as const,
   elements: {
     bar: {
       borderWidth: 2,
@@ -30,60 +33,60 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'right' as const,
+      position: "right" as const,
     },
     title: {
       display: true,
-      text: 'Chart.js Horizontal Bar Chart',
+      text: "Chart.js Horizontal Bar Chart",
     },
   },
+  maintainAspectRatio: false
 };
-
-
-
 
 const fetchItemList = async (setItemList) => {
   const inputdata = await fetch(`http://localhost/backend/item`, {
-      method: 'GET',
-      mode: 'cors'
+    method: "GET",
+    mode: "cors",
   })
-  .then(res => res.json())
-  .then(itemList => {
+    .then((res) => res.json())
+    .then((itemList) => {
       setItemList(itemList);
-  });
+    });
 };
 
-
-const setItemNameList = (itemList) =>{
-  let ret = {}
-  itemList.map((item)=>{
+const setItemNameList = (itemList) => {
+  let ret = {};
+  itemList.map((item) => {
     ret[item.name] = item.salesFigure;
-  })
+  });
   return ret;
-}
+};
 
-export default function Graph() {
-  const [itemList,setItemList] = useState([]);
+export default function Graph(props) {
+  const [itemList, setItemList] = useState([]);
 
-  useEffect(() =>{
+  useEffect(() => {
     fetchItemList(setItemList);
-    
-  },[])
+  }, []);
 
   let dict = setItemNameList(itemList);
-  const labels = Object.keys(dict)
+  const labels = Object.keys(dict);
 
   const data = {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: "Dataset 1",
         data: labels.map((label) => dict[label]),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgba(255, 99, 132, 0.5)',
-      }
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
     ],
   };
 
-  return <Bar options={options} data={data} />;
+  return (
+    <div className="Graph">
+      <Bar options={options} data={data} height={props.height}/>
+    </div>
+  );
 }
