@@ -5,8 +5,8 @@ import ItemCard from "../../../component/ItemCard";
 function JuicePane(props){
     return(
         <div className="JuicePane">
-            <div className="Category">Juice</div>
-            <div className="JuicePane-flex">
+            <div className="CategoryName">Juice</div>
+            <div className="ItemPane-Content JuicePane-flex">
             {props.juiceList.map((juice) => {
                 return(
                 <ItemCard

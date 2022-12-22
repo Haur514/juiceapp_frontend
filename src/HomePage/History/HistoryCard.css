@@ -30,3 +30,10 @@
 .history-cancel-toggle{
     width:15%;
 }
+
+.cancel-button-pane{
+    position: relative;
+    top:0;
+    left:0;
+
+}

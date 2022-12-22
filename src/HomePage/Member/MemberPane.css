@@ -6,6 +6,9 @@
     border-color:black;
     border: solid 1px #333;
     margin:5px;
+
+    background-color: rgb(47, 47, 47);
+    color: greenyellow;
 }
 
 .MemberPane .attribute{

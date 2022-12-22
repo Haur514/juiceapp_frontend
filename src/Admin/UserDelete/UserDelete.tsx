@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
 import "./UserDelete.css"
+import { Toggle } from "../../component/Toggle";
 
 
 const fetchMemberList = async (setMemberList) =>{
@@ -32,12 +33,15 @@ function UserAddPane(){
     return(
         <div className="UserDelete">
             <table border={1}>
-                <tr>
+                <tr className="caption">
                     <th>
                         ユーザ名
                     </th>
                     <th>
                         属性
+                    </th>
+                    <th>
+                        Active/InActive
                     </th>
                     <th>
                         削除ボタン
@@ -50,6 +54,11 @@ function UserAddPane(){
                         </th>
                         <th>
                             {member.attribute}
+                        </th>
+                        <th>
+                            <Toggle
+                                onClick={(hoge) => console.log(hoge)}
+                                toggled={true}></Toggle>
                         </th>
                         <th>
                         <Button

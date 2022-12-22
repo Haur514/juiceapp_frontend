@@ -1,47 +1,44 @@
 .MemberCard{
+    background-color: rgb(47,47,47);
+    border: .2em solid greenyellow;
+    border-radius: 0.5em;
+    margin: 1em .3em;
+
+}
+
+.MemberCardChildren{
     height:100%;
     text-align: left;
     display: flex;
     align-items: center;
 }
 
-.MemberCard img{
+.MemberCardChildren img{
     display:block;
-    height:80%;
+    height:1.5em;
     padding-left:auto;
     margin-right:0.5em;
     margin-left:0.5em;
     border-radius: 50%;
 }
 
-.MemberCard img:hover{
-    animation-name: MemberCard-hover;
+.MemberCardChildren img:hover{
+    animation-name: MemberCardChildren-hover;
     animation-duration:2s;
     animation-fill-mode: forwards;
 }
 
-@keyframes MemberCard-hover{
+@keyframes MemberCardChildren-hover{
     0% {
         transform: scale(1);
         transform: rotate(0deg);
     }
-    /* 25% {
-        transform: rotate(360deg);
-    } */
     100% {
         transform: scale(1);
         transform: rotate(1440deg);
     }
 }
 
-.SelectedMemberCard{
-    width:100%;
-    height:10%;
-    margin:auto;
-    border-width:2px;
-    border-color:black;
-    border: solid 1px #333;
-    padding:auto;
-    background-color: black;
-    color:white;
+.MemberCard-selected{
+    border: .2em solid rgb(62, 220, 255);
 }

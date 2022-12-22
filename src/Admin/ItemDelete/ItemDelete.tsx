@@ -32,7 +32,7 @@ function UserAddPane(){
     return(
         <div className="ItemDelete">
             <table border={1}>
-                <tr>
+                <tr className="caption">
                     <th>
                         アイテム名
                     </th>

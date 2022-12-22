@@ -39,7 +39,7 @@ function HistoryPane(props){
 
     return(
         <div className="HistoryPane">
-            <div className="Category">History</div>
+            <div className="CategoryName">History</div>
             <div className="HistoryPane-flex">
             {histories.map(history=>
                 <HistoryCard 

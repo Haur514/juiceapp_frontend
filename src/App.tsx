@@ -10,19 +10,19 @@ import { useGetElementProperty } from './customhook/useGetElementProperty';
 import Graph from './Graph/Graph';
 import HomePageParent from './HomePage/HomePageParent';
 import HistoryFetch from './util/fetch/HistoryFetch';
+import { Toggle } from './component/Toggle';
 
 
 
 function App() {
 
-//     const GraphTabRef = useRef<HTMLInputElement>(null);
-
-//   const { getElementProperty } =
-//     useGetElementProperty<HTMLDivElement>(GraphTabRef);
-
+const logState = state => {
+    console.log("Toggled:", state)
+}
 
   return (
     <Tabs>
+        
         <TabList>
             <Tab>Home</Tab>
             <Tab>Graph</Tab>
@@ -43,7 +43,9 @@ function App() {
             <ChatPane/>
         </TabPanel>
         <TabPanel>
-            <HistoryFetch/>
+            <Toggle
+            toggled={true}
+            onClick={logState}/>
         </TabPanel>
     </Tabs>
   );

@@ -29,7 +29,7 @@ function UnpaidMember() {
   return (
     <div className="UnpaidMember">
         <table border={1}>
-            <tr>
+            <tr className="caption">
                 <th>
                     名前
                 </th>

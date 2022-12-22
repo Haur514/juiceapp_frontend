@@ -6,8 +6,8 @@ import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 function FoodPane(props){
     return(
         <div className="FoodPane">
-            <div className="Category">Food</div>
-            <div className="FoodPane-flex">
+            <div className="CategoryName">Food</div>
+            <div className="ItemPane-Content FoodPane-flex">
             {props.foodList.map((food) => {
                 return(
                 <ItemCard

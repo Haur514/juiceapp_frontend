@@ -9,7 +9,7 @@
 
 .PullDownMenu .SummaryButton{
     background-color: white;
-    opacity:0.8;
+    /* opacity:0.8; */
     width:100%;
     border:none;
     border-radius: 0.2em;
@@ -21,7 +21,7 @@
 .PullDownMenu .PullDownMenu-Content{
     margin-top:0.3em;
     background-color: white;
-    opacity:0.8;
+    /* opacity:0.8; */
     border:none;
     border-radius: 0.2em;
     font-size:2em;

@@ -2,3 +2,18 @@
     display:flex;
     /* background-color: black; */
 }
+
+.CategoryName{
+    background-color: #303030;
+    color:greenyellow;
+    font-weight: bold;
+    font-size:2em;
+}
+
+.ItemPane-Content{
+    width:100%;
+    height:10em;
+    border: solid 1px black;
+    margin-bottom: 1em;
+    background-color:#787878;
+}

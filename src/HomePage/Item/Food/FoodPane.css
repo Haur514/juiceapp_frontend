@@ -1,21 +1,12 @@
 .FoodPane{
-    width:100%;
-    height:40%;
-    border: solid 1px black;
-    margin-bottom: 1em;
-    background-color:#fff0cf;
+    height:20em;
+    margin-bottom:1em;
+
 }
 
 .FoodPane-flex{
     overflow-x: scroll;
     display:flex;
     height:85%;
-}
-
-.Category{
-    background-color: #FFC039;
-    color:#121258;
-    font-weight: bold;
-    font-size:2em;
 }
 
