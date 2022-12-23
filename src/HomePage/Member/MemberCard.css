@@ -1,7 +1,7 @@
 .MemberCard{
+    position:relative;
     background-color: rgb(47,47,47);
     border: .2em solid greenyellow;
-    border-radius: 0.5em;
     margin: 1em .3em;
 
 }
@@ -39,6 +39,12 @@
     }
 }
 
-.MemberCard-selected{
-    border: .2em solid rgb(62, 220, 255);
+
+.MemberCard-Selected{
+    position:absolute;
+    width:1em;
+    background-color: greenyellow;
+    top: 0;
+    left: 0;
+    bottom: 0;
 }

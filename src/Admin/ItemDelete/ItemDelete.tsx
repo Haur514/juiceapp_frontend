@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
 import "./ItemDelete.css"
+import { Toggle } from "../../component/Toggle";
 
 
 const fetchItemList = async (setItemList) =>{
@@ -40,6 +41,9 @@ function UserAddPane(){
                         グルーピング
                     </th>
                     <th>
+                        Active/Inactive
+                    </th>
+                    <th>
                         削除ボタン
                     </th>
                 </tr>
@@ -50,6 +54,9 @@ function UserAddPane(){
                         </th>
                         <th>
                             {member.grouping}
+                        </th>
+                        <th>
+                            <Toggle toggled={true} onClick={undefined}></Toggle>
                         </th>
                         <th>
                         <Button
