@@ -7,10 +7,11 @@ import './App.css';
 import ChatPane from './Chat/ChatPane';
 import Chat from './Chat/ChatPane';
 import { useGetElementProperty } from './customhook/useGetElementProperty';
-import Graph from './Graph/Graph';
+import SellingBarGraph from './Graph/selling/SellingBarGraph';
 import HomePageParent from './HomePage/HomePageParent';
 import HistoryFetch from './util/fetch/HistoryFetch';
 import { Toggle } from './component/Toggle';
+import GraphPane from './Graph/GraphPane';
 
 
 
@@ -34,7 +35,7 @@ const logState = state => {
             <HomePageParent/>
         </TabPanel>
         <TabPanel>
-            <Graph/>
+            <GraphPane/>
         </TabPanel>
         <TabPanel>
             <AdminPane />

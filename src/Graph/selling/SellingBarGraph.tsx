@@ -11,7 +11,7 @@ import {
 import { Bar } from "react-chartjs-2";
 import { faker } from "@faker-js/faker";
 
-import "./Graph.css";
+import "./SellingBarGraph.css";
 import { lstat } from "fs/promises";
 
 ChartJS.register(
@@ -33,14 +33,43 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
+      display:true,
+      labels:{
+        color:"white",
+        font:{
+          size: 20
+        }
+      },
       position: "right" as const,
     },
     title: {
       display: true,
-      text: "Chart.js Horizontal Bar Chart",
+      text: "ジュース売れ筋グラフ",
+      color:"white",
+      font:{
+        size: 30
+      }
     },
   },
-  maintainAspectRatio: false
+  maintainAspectRatio: false,
+  scales:{
+    y:{
+      ticks:{
+        color:"white",
+        font: {
+          size:20
+        }
+      }
+    },
+    x:{
+      ticks:{
+        color:"white",
+        font:{
+          size:20
+        }
+      }
+    }
+  }
 };
 
 const fetchItemList = async (setItemList) => {
@@ -62,7 +91,7 @@ const setItemNameList = (itemList) => {
   return ret;
 };
 
-export default function Graph(props) {
+export default function SellingBarGraph(props) {
   const [itemList, setItemList] = useState([]);
 
   useEffect(() => {
@@ -78,14 +107,14 @@ export default function Graph(props) {
       {
         label: "Dataset 1",
         data: labels.map((label) => dict[label]),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        borderColor: "rgb(191, 253, 91)",
+        backgroundColor: "rgba(191,253,91,0.2)",
       },
     ],
   };
 
   return (
-    <div className="Graph">
+    <div className="SellingBarGraph">
       <Bar options={options} data={data} height={props.height}/>
     </div>
   );
