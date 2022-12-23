@@ -31,7 +31,7 @@
     background-color: red;
     margin-left:auto;
     color:white;
-
+    padding:.5em 0;
 }
 
 .cancel_toggle_button{
@@ -45,23 +45,27 @@
 
 .cancel_toggle_button{
     position:relative;
-    height:100%;
-    vertical-align: middle;
+    padding: .5em;
     color:greenyellow;
+
 }
 
 
 .history-date{
     margin-left:1em;
     width:50%;
+    padding:.5em 0;
 }
 .history-purchasedItem{
     margin-left:2em;
     width:15%;
+    padding:.5em 0;
+
 }
 .history-money{
     margin-left:2em;
     width:15%;
+    padding:.5em 0;
 }
 
 .history-cancel-toggle{
