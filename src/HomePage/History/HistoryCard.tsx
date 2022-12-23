@@ -50,8 +50,10 @@ function HistoryCard(props) {
         <animated.div
           className="cancel-button"
           style={cancel_style}
-          onClick={() => {
-            handle_cancel_toggle();
+          onClick={async () => {
+            setCancelToggle(false);
+            await postRecall(props.history);
+            props.updateHistory();
           }}
         >
           <animated.span style={opacity_style}>Cancel</animated.span>

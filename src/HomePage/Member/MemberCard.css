@@ -3,6 +3,8 @@
     background-color: rgb(47,47,47);
     border: .2em solid greenyellow;
     margin: 1em .3em;
+    border-top-color: transparent;
+    border-right-color: transparent;
 
 }
 
@@ -44,7 +46,7 @@
     position:absolute;
     width:1em;
     background-color: greenyellow;
-    top: 0;
-    left: 0;
-    bottom: 0;
+    top: -.2em;
+    left: -.2em;
+    bottom: -.2em;
 }
