@@ -16,6 +16,13 @@ const fetchItemList = async (setItemList) =>{
     });
 }
 
+const switchMemberActivity = async (id : string, activity : boolean) => {
+    await fetch(`http://localhost/backend/item/setactivity?id=${id}&activity=${activity}`,{
+        method: 'GET',
+        mode: 'cors'
+    });
+}
+
 const deleteItem = async (item) =>{
     await fetch(`http://localhost/backend/item/delete?name=${item}`,{
         method: 'GET',
@@ -47,23 +54,28 @@ function UserAddPane(){
                         削除ボタン
                     </th>
                 </tr>
-                {itemList.map(member => 
+                {itemList.map(item => 
                     <tr>
                         <th>
-                        {member.name}
+                        {item.name}
                         </th>
                         <th>
-                            {member.grouping}
+                            {item.grouping}
                         </th>
                         <th>
-                            <Toggle toggled={true} onClick={undefined}></Toggle>
+                            <Toggle 
+                            toggled={item.active}
+                            onClick={async () => {
+                                await switchMemberActivity(item.name,!item.active)
+                            }}
+                             ></Toggle>
                         </th>
                         <th>
                         <Button
                             color="gray"
                             radius="0.5em"
                             onClick={async () => {
-                                await deleteItem(member.name);
+                                await deleteItem(item.name);
                                 await fetchItemList(setItemList);
                             }}
                             fontColor="white"

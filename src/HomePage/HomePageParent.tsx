@@ -26,12 +26,18 @@ const fetchItemList = async (setJuiceList,setFoodList) => {
     .then(itemList => {
         setJuiceList(
             itemList
+            .filter((item) => {
+                return item.active;
+            })
             .filter(
                 item => item.grouping == "juice"
             )
         );
         setFoodList(
             itemList
+            .filter((item) => {
+                return item.active;
+            })
             .filter(
                 item => item.grouping == "food"
             )

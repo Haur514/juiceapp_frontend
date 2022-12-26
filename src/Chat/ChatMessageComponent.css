@@ -8,7 +8,7 @@
     max-width: 100%;
     color: #555;
     font-size: 1em;
-    background: #bed9ff;
+    background: rgb(63, 235, 83);
     border-radius: 0.3em;
     overflow-wrap: break-word;
   }
@@ -19,16 +19,20 @@
     top: .5em;
     left: -1.2em;
     border: .7em solid transparent;
-    border-right: .7em solid #bed9ff;
+    border-right: .7em solid rgb(63, 235, 83);
     z-index: 0;
   }
 
   .ChatMessageComponent{
     margin: 1em 0;
     display: flex;
-    background-color: rgb(232, 232, 232);
+    background-color: rgba(48,48,48,0.3);
   }
 
   .ChatMessageComponent img{
+    width: 5em;
+    height:5em;
     border-radius: 50%;
+    margin-top:.25em;
+    margin-left:.25em;
   }
