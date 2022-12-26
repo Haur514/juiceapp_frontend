@@ -9,6 +9,7 @@ import SendSlack from "./SendSlack/SendSlack";
 import UnpaidMember from "./UnpaidMember/UnpaidMember";
 import ItemPane from "../HomePage/Item/ItemPane";
 import ItemDelete from "./ItemDelete/ItemDelete";
+import PassWordPane from "./PassWord/PassWordPane";
 
 function userAddClicked(is_user_add_pulldown_visible,setUserAddVisivility){
     setUserAddVisivility(!is_user_add_pulldown_visible);
@@ -32,6 +33,7 @@ function Admin(){
     
     return(
         <div className="AdminPane">
+            <PassWordPane/>
             <div className="TabPane"></div>
             <img src={backgroundImg}/>
             <div className="ContentPane">

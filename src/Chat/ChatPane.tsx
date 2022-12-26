@@ -12,7 +12,7 @@ const fetchMessagesList = async (setMessagesList) =>{
     })
     .then(res => res.json())
     .then(messages => {
-        setMessagesList(messages);
+        setMessagesList(messages.reverse());
     });
 }
 
@@ -28,14 +28,14 @@ function Chat(){
 
     return(
         <div className="ChatPane">
-
-            {messages.map(chat=>
-                <ChatMessageComponent 
-                chatMessage={chat.message}
-                key={chat.id}/>
-            )}
             <ChatInputPane
                 setLastUpdated={setLastUpdated}/>
+            {messages.map(chat=>   
+                <ChatMessageComponent 
+                chat={chat}
+                key={chat.id}/>
+            )}
+            
         </div>
     );
 }

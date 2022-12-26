@@ -100,6 +100,10 @@ export default function SellingBarGraph(props) {
 
   let dict = setItemNameList(itemList);
   const labels = Object.keys(dict);
+  labels.sort((a,b) => {
+    return dict[b] - dict[a];
+  })
+
 
   const data = {
     labels,

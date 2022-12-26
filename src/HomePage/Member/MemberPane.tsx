@@ -8,6 +8,22 @@ function MemberPane(props){
     return(
         <div className="MemberPane">
             <div className="attribute">
+                Teature
+            </div>
+            {props.memberList
+            .filter(function(member) {
+                return member.attribute=="teature";
+            })
+            .map((member) => {
+                return(
+                    <MemberCard 
+                    selected ={props.selectedMemberId==member.name?true:false}
+                    member={member}
+                    setSelectedMemberId = {props.setSelectedMemberId}
+                    key={member.name}/>
+                );
+            })}
+            <div className="attribute">
                 Master 2
             </div>
             {props.memberList

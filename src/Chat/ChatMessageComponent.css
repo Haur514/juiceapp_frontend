@@ -23,10 +23,20 @@
     z-index: 0;
   }
 
+  .ChatMessageDate{
+    background-color: #303030;
+    color:greenyellow;
+    padding:0 .5em;
+    border-radius:1em;
+    top:-1em;
+    font-size: .8em;
+    width:15em;
+  }
+
   .ChatMessageComponent{
     margin: 1em 0;
     display: flex;
-    background-color: rgba(48,48,48,0.3);
+    /* background-color: rgba(48,48,48,0.3); */
   }
 
   .ChatMessageComponent img{

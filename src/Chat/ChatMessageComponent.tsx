@@ -11,7 +11,10 @@ function ChatMessageComponent(props){
         <div className="ChatMessageComponent">
             <img src={DefaultIcon}/>
             <div className="MessageBox">
-                {props.chatMessage}
+                {props.chat.message}
+                <div className="ChatMessageDate">
+                    {props.chat.date}
+                </div>
             </div>
         </div>
     );
