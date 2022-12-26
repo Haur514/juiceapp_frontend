@@ -1,24 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 
+
+const fetchHistoryOfEachMonth = async (setHistoryOfEachMonth) => {
+  const inputdata = await fetch(`http://localhost/backend/history/eachmonth`, {
+    method: "GET",
+    mode: "cors",
+  })
+    .then((res) => res.json())
+    .then((historyOfEachMonth) => {
+      setHistoryOfEachMonth(historyOfEachMonth);
+    });
+};
+
+
 function LineChart() {
-  const labels = ["1 月", "2 月", "3 月", "4 月", "5 月", "6 月"];
+
+  const [historyOfEachMonth,setHistoryOfEachMonth] = useState([]);
+
+  useEffect(() => {
+    fetchHistoryOfEachMonth(setHistoryOfEachMonth);
+  },[]);
+
+  const labels = Object.keys(historyOfEachMonth);
+
   const graphData = {
     labels: labels,
     datasets: [
       {
-        label: "ジュース売り上げ",
-        data: [65, 59, 60, 81, 56, 55],
+        label: "売り上げ",
+        data: labels.map((label) => historyOfEachMonth[label]),
         borderColor: "rgb(75, 192, 192)",
       },
-      {
-        label: "フード売り上げ",
-        data: [60, 55, 57, 61, 75, 50],
-        // borderColor: "rgb(75, 100, 192)",
-        borderColor: "rgb(191, 253, 91)",
-        backgroundColor: "rgba(191,253,91,0.2)",
-      },
+      // {
+      //   label: "フード売り上げ",
+      //   data: [60, 55, 57, 61, 75, 50],
+      //   // borderColor: "rgb(75, 100, 192)",
+      //   borderColor: "rgb(191, 253, 91)",
+      //   backgroundColor: "rgba(191,253,91,0.2)",
+      // },
     ],
     
   };

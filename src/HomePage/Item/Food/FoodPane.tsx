@@ -19,6 +19,7 @@ function FoodPane(props){
                     name = {food.name}
                     imgSrc = {props.logoDictionary[food.name]}
                     width = "100px"
+                    key={food.name}
                 />
                 )
             })}

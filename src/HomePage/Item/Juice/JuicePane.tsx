@@ -18,6 +18,7 @@ function JuicePane(props){
                 name = {juice.name}
                 imgSrc = {props.logoDictionary[juice.name]}
                 width = "100px"
+                key={juice.name}
                 />
                 )
             })}

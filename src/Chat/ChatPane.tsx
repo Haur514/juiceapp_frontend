@@ -31,7 +31,8 @@ function Chat(){
 
             {messages.map(chat=>
                 <ChatMessageComponent 
-                chatMessage={chat.message}/>
+                chatMessage={chat.message}
+                key={chat.id}/>
             )}
             <ChatInputPane
                 setLastUpdated={setLastUpdated}/>

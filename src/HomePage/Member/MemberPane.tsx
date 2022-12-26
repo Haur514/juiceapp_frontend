@@ -19,7 +19,8 @@ function MemberPane(props){
                     <MemberCard 
                     selected ={props.selectedMemberId==member.name?true:false}
                     member={member}
-                    setSelectedMemberId = {props.setSelectedMemberId}/>
+                    setSelectedMemberId = {props.setSelectedMemberId}
+                    key={member.name}/>
                 );
             })}
             <div className="attribute">
@@ -34,7 +35,8 @@ function MemberPane(props){
                     <MemberCard 
                     selected ={props.selectedMemberId==member.name?true:false}
                     member={member}
-                    setSelectedMemberId = {props.setSelectedMemberId}/>
+                    setSelectedMemberId = {props.setSelectedMemberId}
+                    key={member.name}/>
                 );
             })}
             <div className="attribute">
@@ -49,7 +51,8 @@ function MemberPane(props){
                     <MemberCard 
                     selected ={props.selectedMemberId==member.name?true:false}
                     member={member}
-                    setSelectedMemberId = {props.setSelectedMemberId}/>
+                    setSelectedMemberId = {props.setSelectedMemberId}
+                    key={member.name}/>
                 );
             })}
         </div>

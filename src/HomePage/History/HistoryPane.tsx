@@ -44,7 +44,8 @@ function HistoryPane(props){
             {histories.map(history=>
                 <HistoryCard 
                     history={history}
-                    updateHistory={updateHistory}/>
+                    updateHistory={updateHistory}
+                    key={history.id}/>
             )}
             </div>
         </div>

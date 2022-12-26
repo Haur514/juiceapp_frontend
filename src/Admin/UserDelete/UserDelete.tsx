@@ -16,6 +16,13 @@ const fetchMemberList = async (setMemberList) =>{
     });
 }
 
+const switchMemberActivity = async (name : string, activity : boolean) => {
+    await fetch(`http://localhost/backend/member/setactivity?name=${name}&activity=${activity}`,{
+        method: 'GET',
+        mode: 'cors'
+    });
+}
+
 const deleteMember = async (member) =>{
     await fetch(`http://localhost/backend/member/delete?name=${member}`,{
         method: 'GET',
@@ -57,8 +64,8 @@ function UserAddPane(){
                         </th>
                         <th>
                             <Toggle
-                                onClick={(hoge) => console.log(hoge)}
-                                toggled={true}></Toggle>
+                                onClick={async () => await switchMemberActivity(member.name,!member.active)}
+                                toggled={member.active}></Toggle>
                         </th>
                         <th>
                         <Button
