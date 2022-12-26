@@ -11,7 +11,9 @@ const fetchMemberList = async (setMemberList) =>{
     })
     .then(res => res.json())
     .then(members => {
-        setMemberList(members);
+        setMemberList(members.filter((member) => {
+            return member.active;
+        }));
     });
 }
 
