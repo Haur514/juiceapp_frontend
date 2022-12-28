@@ -25,16 +25,9 @@ function ChatInputPane(props){
     return(
         <div className="ChatInputPane">
             <InputGroup className="mb-3">
-            <Form.Control
-                placeholder="140字まで入力可能．それ以上は入力しないで．"
-                aria-label="Recipient's username"
-                aria-describedby="basic-addon2"
-                value={message}
-                onChange={(event)=> setMessage(event.target.value)}
-            />
             <Button 
-            variant="outline-secondary" 
-            id="button-addon2"
+            variant="secondary" 
+            id="button-addon2" 
             onClick={async () =>{
                 await addMessage(message)
                 setMessage("")
@@ -43,6 +36,13 @@ function ChatInputPane(props){
             }}>
                 送信
             </Button>
+            <Form.Control
+                placeholder="140字まで入力可能．それ以上は入力しないで．"
+                aria-label="Recipient's username"
+                aria-describedby="basic-addon2"
+                value={message}
+                onChange={(event)=> setMessage(event.target.value)}
+            />
         </InputGroup>
         </div>
     );

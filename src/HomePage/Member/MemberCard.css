@@ -9,20 +9,33 @@
 }
 
 .MemberCardChildren{
-    height:100%;
+    height:1.5em;
     text-align: left;
     display: flex;
     align-items: center;
+    padding-top:0em;
 }
 
 .MemberCardChildren img{
     display:block;
-    height:1.5em;
+    height:1em;
     padding-left:auto;
     margin-right:0.5em;
     margin-left:0.5em;
     border-radius: 50%;
 }
+
+.MemberCardChildren-content{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 60% 40%;
+    font-size:1em;
+}
+
+/* .MemberCardChildren-id{
+    color: gray;
+    font-size:.5em;
+} */
 
 .MemberCardChildren img:hover{
     animation-name: MemberCardChildren-hover;

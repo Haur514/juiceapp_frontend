@@ -11,7 +11,10 @@
     background: rgb(63, 235, 83);
     border-radius: 0.3em;
     overflow-wrap: break-word;
+    min-width: 15em;
   }
+
+
 
   .MessageBox::before {
     content: "";
@@ -23,14 +26,35 @@
     z-index: 0;
   }
 
+  .MessageBox-bottom-pane {
+    display:flex;
+    position:absolute;
+    font-size: .8em;
+    bottom: -2em;
+  }
+
   .ChatMessageDate{
     background-color: #303030;
     color:greenyellow;
     padding:0 .5em;
     border-radius:1em;
-    top:-1em;
-    font-size: .8em;
     width:15em;
+  }
+
+  .GoodReactionButton{
+    color:yellow;
+    border: 1px solid yellow;
+    border-radius:1em;
+    padding: 0 .5em;
+    margin: 0 .5em;
+  }
+
+  .LoveReactionButton{
+    color:palevioletred;
+    border: 1px solid palevioletred;
+    border-radius:1em;
+    padding: 0 .5em;
+    margin: 0 .5em;
   }
 
   .ChatMessageComponent{

@@ -35,7 +35,12 @@ function MemberCard(props) {
         children={
           <div className={`MemberCardChildren`}>
             <img src={DefaultIcon} />
-            {props.member.displayName}
+            <div className={"MemberCardChildren-content"}>
+            <span>{props.member.displayName}</span>
+            {/* <div className={"MemberCardChildren-id"}>
+              {props.member.name}
+            </div> */}
+            </div>
           </div>
         }
         fontSize="3em"

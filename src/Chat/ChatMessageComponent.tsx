@@ -12,8 +12,19 @@ function ChatMessageComponent(props){
             <img src={DefaultIcon}/>
             <div className="MessageBox">
                 {props.chat.message}
-                <div className="ChatMessageDate">
-                    {props.chat.date}
+                <div className="MessageBox-bottom-pane">
+                    <div className="ChatMessageDate">
+                        {props.chat.date}
+                    </div>
+                    {/* <div className="GoodReactionButton" onClick={() => {
+                        
+                    }}> */}
+                        {/* <FontAwesomeIcon icon="fa-solid fa-thumbs-up" /> */}
+                        {/* Good
+                    </div>
+                    <div className="LoveReactionButton">
+                        Love
+                    </div> */}
                 </div>
             </div>
         </div>
