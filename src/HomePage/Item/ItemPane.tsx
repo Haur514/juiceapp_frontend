@@ -5,7 +5,7 @@ import JuicePane from "./Juice/JuicePane";
 import HistoryPane from "../History/HistoryPane";
 import PopUpMenu from "./PopUpMenu/PopUpMenu";
 
-import LogoCora from "./../../image/logo_coca_cora.jpg"
+import LogoCola from "./../../image/logo_coca_cora.jpg"
 import LogoFanta from "./../../image/logo_fanta.jpg"
 import LogoWater from "./../../image/logo_water.jpeg"
 import LogoGogoTea from "./../../image/logo_tea.jpeg"
@@ -18,7 +18,7 @@ function ItemPane(props){
     const [is_popup_visible, setPopUpVisivility] = useState(false);
 
     let logoDictionary = {
-        "CocaCora":LogoCora,
+        "CocaCola":LogoCola,
         "Fanta":LogoFanta,
         "Water":LogoWater,
         "GogoTea":LogoGogoTea,
