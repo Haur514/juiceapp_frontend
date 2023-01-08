@@ -13,7 +13,7 @@ const fetchHistoryData = async (selectedMemberId: string,setHistories) =>{
         return;
     }
 
-    const inputdata = await fetch(`http://localhost/backend/history?name=${selectedMemberId}`, {
+    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/history?name=${selectedMemberId}`, {
         method: 'GET',
         mode: 'cors'
     })

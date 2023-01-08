@@ -4,7 +4,7 @@ import Button from "../../component/Button";
 import "./ItemAdd.css"
 
 const addItem = async (itemId,sellingPrice,costPrice,grouping) =>{
-    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item/add?name=${itemId}&sellingprice=${sellingPrice}&costprice=${costPrice}&grouping=${grouping}`, {
+    const inputdata = await fetch(`http://localhost/backend/item/add?name=${itemId}&sellingprice=${sellingPrice}&costprice=${costPrice}&grouping=${grouping}`, {
     method: 'GET',
     mode: 'cors'
     });

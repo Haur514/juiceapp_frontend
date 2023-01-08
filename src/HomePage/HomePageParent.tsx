@@ -5,7 +5,7 @@ import MemberPane from "./Member/MemberPane";
 
 
 const fetchMemberList = async (setMemberList) =>{
-    const inputdata = await fetch(`http://localhost/backend/member`, {
+    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member`, {
         method: 'GET',
         mode: 'cors'
     })
@@ -18,7 +18,7 @@ const fetchMemberList = async (setMemberList) =>{
 }
 
 const fetchItemList = async (setJuiceList,setFoodList) => {
-    const inputdata = await fetch(`http://localhost/backend/item`, {
+    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item`, {
         method: 'GET',
         mode: 'cors'
     })

@@ -8,7 +8,7 @@ import { Button } from "react-bootstrap";
 
 
 const addMessage = async (message) =>{
-    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/chat/add?message=${message}`, {
+    const inputdata = await fetch(`http://localhost/backend/chat/add?message=${message}`, {
         method: 'GET',
         mode: 'cors'
     });

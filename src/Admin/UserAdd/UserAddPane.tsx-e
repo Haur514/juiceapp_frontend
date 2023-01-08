@@ -5,7 +5,7 @@ import "./UserAddPane.css";
 
 const addUser = async (userId, displayName, attribute) => {
   const inputdata = await fetch(
-    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member/add?name=${userId}&displayName=${displayName}&attribute=${attribute}`,
+    `http://localhost/backend/member/add?name=${userId}&displayName=${displayName}&attribute=${attribute}`,
     {
       method: "GET",
       mode: "cors",

@@ -73,7 +73,7 @@ export const options = {
 };
 
 const fetchItemList = async (setItemList) => {
-  const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item`, {
+  const inputdata = await fetch(`http://localhost/backend/item`, {
     method: "GET",
     mode: "cors",
   })

@@ -5,7 +5,7 @@ import HistoryEntity from '../../entity/HistoryEntity'
 let protocol = "http"
 
 const fetchHistoryData = async (histories,setHistories) =>{
-    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/history`, {
+    const inputdata = await fetch(`http://localhost/backend/history`, {
         method: 'GET',
         mode: 'cors'
     })

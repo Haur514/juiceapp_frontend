@@ -4,7 +4,7 @@ import "chart.js/auto";
 
 
 const fetchHistoryOfEachMonth = async (setHistoryOfEachMonth) => {
-  const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/history/eachmonth`, {
+  const inputdata = await fetch(`http://localhost/backend/history/eachmonth`, {
     method: "GET",
     mode: "cors",
   })

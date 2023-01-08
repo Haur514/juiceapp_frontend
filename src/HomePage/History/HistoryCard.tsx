@@ -21,7 +21,7 @@ const transitionStyle = {
 
 const postRecall = async (history) => {
   const inputdata = await fetch(
-    `http://localhost/backend/recall?name=${history.name}&item=${history.item}&id=${history.id}&price=${history.price}`,
+    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/recall?name=${history.name}&item=${history.item}&id=${history.id}&price=${history.price}`,
     {
       method: "GET",
       mode: "cors",

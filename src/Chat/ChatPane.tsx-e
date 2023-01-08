@@ -6,7 +6,7 @@ import ChatInputPane from "./input/ChatInputPane";
 
 
 const fetchMessagesList = async (setMessagesList) =>{
-    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/chat`, {
+    const inputdata = await fetch(`http://localhost/backend/chat`, {
         method: 'GET',
         mode: 'cors'
     })
