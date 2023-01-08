@@ -1,6 +1,3 @@
-[submodule "JuiceApp_backend"]
-	path = JuiceApp_backend
-	url = git@github.com:Haur514/JuiceApp_backend.git
 [submodule "backend"]
 	path = backend
-	url = git@github.com:Haur514/JuiceApp_backend.git
+	url = https://github.com/Haur514/JuiceApp_backend.git
