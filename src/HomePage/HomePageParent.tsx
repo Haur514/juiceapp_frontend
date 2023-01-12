@@ -48,7 +48,8 @@ const fetchItemList = async (setJuiceList,setFoodList) => {
 function HomePageParent(){
 
     const [selectedMemberId, setSelectedMemberId] = useState("");
-    const [selectedItem,setSelectedItem] = useState("");
+    const [selectedMember, setSelectedMember] = useState(null);
+    const [selectedItem,setSelectedItem] = useState(null);
     const [memberList,setMemberList] = useState([]);
     // const [itemList,setItemList] = useState([]);
     const [juiceList,setJuiceList] = useState([]);
@@ -70,6 +71,8 @@ function HomePageParent(){
             <MemberPane 
                 setSelectedMemberId={setSelectedMemberId}
                 selectedMemberId={selectedMemberId}
+                selectedMember={selectedMember}
+                setSelectedMember={setSelectedMember}
                 memberList={memberList}/>
             <ItemPane
                 setSelectedItem={setSelectedItem}
@@ -77,6 +80,7 @@ function HomePageParent(){
                 juiceList={juiceList}
                 foodList={foodList}
                 selectedMemberId={selectedMemberId}
+                selectedMember={selectedMember}
                 setSumPurchased={setSumPurchased}
                 sumPurchased={sumPurchased}/>
         </div>

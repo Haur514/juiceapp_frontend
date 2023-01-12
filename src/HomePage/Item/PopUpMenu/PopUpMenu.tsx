@@ -2,33 +2,47 @@ import React, { useState } from "react";
 import Button from "../../..//component/Button";
 import './PopUpMenu.css';
 
-// let selected_item: SVGStringList = "";
+// 引数メモ
+// let popupmenuProps = {
+//     visibility: is_popup_visible,
+//     setPopUpVisivility: {setPopUpVisivility},
+//     imgSrc: logoDictionary[props.selectedItem],
+//     selectedMemberId: props.selectedMemberId,
+//     selectedItem: props.selectedItem,
+//     setSumPurchased:props.setSumPurchased,
+//     selectedMember:props.selectedMember
+// }
 
 function PopUpMenu(props){
     
     const purchaseItem = async () =>{
-        if(props.selectedMemberId==""){
+        if(props.popupmenuProps.selectedMemberId==""){
             return;
         }
-        const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase?name=${props.selectedMemberId}&item=${props.selectedItem}`, {
+        const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase?name=${props.popupmenuProps.selectedMemberId}&item=${props.popupmenuProps.selectedItem}`, {
         method: 'GET',
         mode: 'cors'
         });
-        props.setSumPurchased((prev) => prev+1);
+        props.popupmenuProps.setSumPurchased((prev) => prev+1);
         closePopUp();
     }
 
     const closePopUp = () => {
-        props.setPopUpVisivility(false);
+        props.popupmenuProps.setPopUpVisivility(false);
     }
 
     return(
-        <div className={`popup-menu-background ${props.visible ? 'visible':'hidden'}`}>
-            <div className={`popup-menu ${props.visible ? 'visible':'hidden'}`}>
-                <div className="buying">購入</div>
+        <div className={`popup-menu-background ${props.popupmenuProps.visibility ? 'visible':'hidden'}`}>
+            <div className={`popup-menu ${props.popupmenuProps.visibility ? 'visible':'hidden'}`}>
+                <div className="popup-UserInformation">
+                    {props.popupmenuProps.selectedMember == null ? "hoge" :props.popupmenuProps.selectedMember.displayName}さん
+                </div>
+                {/* <div className="buying">今月の支払い : 0円</div> */}
                 <div className="item-info">
-                    <img src={props.imgSrc} className="menu-icon"/>
-                    <div>{props.name}</div>
+                    <img src={props.popupmenuProps.imgSrc} className="menu-icon"/>
+                    <div style={{marginRight:"1em"}}>{props.popupmenuProps.selectedItem == null? "hoge" : props.popupmenuProps.selectedItem.name}</div>
+                    <div>{props.popupmenuProps.selectedItem == null? "hoge" : props.popupmenuProps.selectedItem.sellingPrice}円</div>
+                    {/* <span>{props.popupmenuProps.selectedItem.sellingprice}</span> */}
                 </div>
                 <div className="select-button-pane">
                     <Button
