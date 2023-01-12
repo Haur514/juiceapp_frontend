@@ -28,7 +28,7 @@ function ItemPane(props){
     let popupmenuProps = {
         visibility: is_popup_visible,
         setPopUpVisivility: setPopUpVisivility,
-        imgSrc: logoDictionary[props.selectedItem.name],
+        imgSrc: logoDictionary[props.selectedItem== null ? "CocaCola" : props.selectedItem.name],
         selectedMemberId: props.selectedMemberId,
         selectedItem: props.selectedItem,
         setSumPurchased:props.setSumPurchased,
