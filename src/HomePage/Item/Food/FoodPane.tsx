@@ -13,7 +13,7 @@ function FoodPane(props){
                 <ItemCard
                     color={props.selected?"#121258":"#FFC039"}
                     onClick={() => {
-                        props.setSelectedItem(food.name);
+                        props.setSelectedItem(food);
                         props.setPopUpVisivility(true);
                     }}
                     name = {food.name}

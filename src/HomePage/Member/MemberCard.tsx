@@ -28,6 +28,7 @@ function MemberCard(props) {
         width="100%"
         onClick={() => {
           props.setSelectedMemberId(props.member.name);
+          props.setSelectedMember(props.member);
         }}
         radius=".3em"
         border="greenyellow"

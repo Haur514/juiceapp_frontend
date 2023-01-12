@@ -14,7 +14,6 @@ import LogoDagashi from "./../../image/logo_dagashi.jpeg"
 
 function ItemPane(props){
 
-    // const [selected_item, setValue] = useState("")
     const [is_popup_visible, setPopUpVisivility] = useState(false);
 
     let logoDictionary = {
@@ -24,6 +23,16 @@ function ItemPane(props){
         "GogoTea":LogoGogoTea,
         "PotatoChips":LogoPotechi,
         "Dagashi":LogoDagashi
+    }
+
+    let popupmenuProps = {
+        visibility: is_popup_visible,
+        setPopUpVisivility: setPopUpVisivility,
+        imgSrc: logoDictionary[props.selectedItem.name],
+        selectedMemberId: props.selectedMemberId,
+        selectedItem: props.selectedItem,
+        setSumPurchased:props.setSumPurchased,
+        selectedMember:props.selectedMember,
     }
 
     const closePopUp = () => {
@@ -43,18 +52,12 @@ function ItemPane(props){
                 foodList={props.foodList}
                 logoDictionary={logoDictionary}/>
             <HistoryPane 
-                setValue={props.setSelectedItem}
+                setSelectedItem={props.setSelectedItem}
                 setPopUpVisivility={setPopUpVisivility}
                 selectedMemberId={props.selectedMemberId}
                 sumPurchased={props.sumPurchased}/>
             <PopUpMenu 
-                name={props.selectedItem}
-                visible={is_popup_visible}
-                setPopUpVisivility={setPopUpVisivility}
-                imgSrc={logoDictionary[props.selectedItem]}
-                selectedMemberId={props.selectedMemberId}
-                selectedItem={props.selectedItem}
-                setSumPurchased={props.setSumPurchased}/>
+                popupmenuProps={popupmenuProps}/>
         </div>
     );
 }
