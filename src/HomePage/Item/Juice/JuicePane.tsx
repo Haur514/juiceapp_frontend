@@ -10,17 +10,17 @@ function JuicePane(props){
             {props.juiceList.sort((a,b) => {return - a.salesFigure + b.salesFigure;}).map((juice) => {
                 return(
                 <ItemCard
-                color={props.selected?"#121258":"#FFC039"}
-                onClick={() => {
-                    props.setSelectedItem(juice);
-                    if(props.selectedMember!=null){
-                        props.setPopUpVisivility(true);
-                    }
-                }}
-                name = {juice.name}
-                imgSrc = {props.logoDictionary[juice.name]}
-                width = "100px"
-                key={juice.name}
+                    color={props.selected?"#121258":"#FFC039"}
+                    onClick={() => {
+                        props.setSelectedItem(juice);
+                        if(props.selectedMember!=null){
+                            props.setPopUpVisivility(true);
+                        }
+                    }}
+                    name = {juice.name}
+                    imgSrc = {props.logoDictionary[juice.name]}
+                    width = "100px"
+                    key={juice.name}
                 />
                 )
             })}
