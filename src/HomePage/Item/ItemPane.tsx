@@ -11,6 +11,7 @@ import LogoWater from "./../../image/logo_water.jpeg"
 import LogoGogoTea from "./../../image/logo_tea.jpeg"
 import LogoPotechi from "./../../image/logo_potechi.jpeg"
 import LogoDagashi from "./../../image/logo_dagashi.jpeg"
+import MemberInformation from "./MemberInformation/MemberInformation";
 
 function ItemPane(props){
 
@@ -41,6 +42,8 @@ function ItemPane(props){
 
     return(
         <div className="ItemPane">
+            <MemberInformation
+                selectedMember={props.selectedMember}/>
             <JuicePane 
                 setSelectedItem={props.setSelectedItem} 
                 setPopUpVisivility={setPopUpVisivility}

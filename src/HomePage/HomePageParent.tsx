@@ -48,7 +48,7 @@ const fetchItemList = async (setJuiceList,setFoodList) => {
 function HomePageParent(){
 
     const [selectedMemberId, setSelectedMemberId] = useState("");
-    const [selectedMember, setSelectedMember] = useState(null);
+    const [selectedMember, setSelectedMember] = useState({name:"",displayName:"",umpayedAmount:0,attribute:"",active:true});
     const [selectedItem,setSelectedItem] = useState(null);
     const [memberList,setMemberList] = useState([]);
     // const [itemList,setItemList] = useState([]);
