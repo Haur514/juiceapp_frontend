@@ -16,10 +16,10 @@ import './PopUpMenu.css';
 function PopUpMenu(props){
     
     const purchaseItem = async () =>{
-        if(props.popupmenuProps.selectedMemberId==""){
+        if(props.popupmenuProps.selectedMember==null){
             return;
         }
-        const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase?name=${props.popupmenuProps.selectedMemberId}&item=${props.popupmenuProps.selectedItem}`, {
+        const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase?name=${props.popupmenuProps.selectedMember.name}&item=${props.popupmenuProps.selectedItem.name}`, {
         method: 'GET',
         mode: 'cors'
         });

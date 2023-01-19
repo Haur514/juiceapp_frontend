@@ -7,13 +7,15 @@ function JuicePane(props){
         <div className="JuicePane">
             <div className="CategoryName">Juice</div>
             <div className="ItemPane-Content JuicePane-flex">
-            {props.juiceList.map((juice) => {
+            {props.juiceList.sort((a,b) => {return - a.salesFigure + b.salesFigure;}).map((juice) => {
                 return(
                 <ItemCard
                 color={props.selected?"#121258":"#FFC039"}
                 onClick={() => {
                     props.setSelectedItem(juice);
-                    props.setPopUpVisivility(true);
+                    if(props.selectedMember!=null){
+                        props.setPopUpVisivility(true);
+                    }
                 }}
                 name = {juice.name}
                 imgSrc = {props.logoDictionary[juice.name]}
