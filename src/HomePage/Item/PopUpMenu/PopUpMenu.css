@@ -8,7 +8,7 @@
 
     background-color:rgba(0,0,0,0.7);
 
-    transform: scale(0);
+    visibility: hidden;
     transform-origin: center center;
     transition: transform .2s;
 }
