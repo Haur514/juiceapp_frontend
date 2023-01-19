@@ -8,7 +8,7 @@ function FoodPane(props){
         <div className="FoodPane">
             <div className="CategoryName">Food</div>
             <div className="ItemPane-Content FoodPane-flex">
-            {props.foodList.map((food) => {
+            {props.foodList.sort((a,b) => - a.salesFigure + b.salesFigure).map((food) => {
                 return(
                 <ItemCard
                     color={props.selected?"#121258":"#FFC039"}

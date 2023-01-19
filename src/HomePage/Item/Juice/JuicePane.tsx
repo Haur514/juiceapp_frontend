@@ -7,7 +7,7 @@ function JuicePane(props){
         <div className="JuicePane">
             <div className="CategoryName">Juice</div>
             <div className="ItemPane-Content JuicePane-flex">
-            {props.juiceList.map((juice) => {
+            {props.juiceList.sort((a,b) => - a.salesFigure + b.salesFigure).map((juice) => {
                 return(
                 <ItemCard
                 color={props.selected?"#121258":"#FFC039"}
