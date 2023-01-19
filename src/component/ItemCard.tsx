@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import internal from "stream";
 import { isPropertySignature } from "typescript";
 import { useGetElementProperty } from "../customhook/useGetElementProperty";
@@ -26,6 +26,12 @@ const ItemCard: React.FC<Props> = ({
   const { getElementProperty } =
     useGetElementProperty<HTMLDivElement>(targetRef);
 
+  const [imgHeight,setImgHeight] = useState(getElementProperty("height")*0.8-32);
+
+  useEffect(() =>{
+    setImgHeight(getElementProperty("height")*0.8-32);
+  },[])
+
   return (
     <button 
       onClick={onClick}
@@ -34,8 +40,8 @@ const ItemCard: React.FC<Props> = ({
     >
     <img 
       src={imgSrc}
-      width={getElementProperty("height")*0.8-32}
-      height={getElementProperty("height")*0.8-32}
+      width={imgHeight}
+      height={imgHeight}
     ></img>
     <span>{name}</span>
     </button>
