@@ -15,7 +15,7 @@ function FoodPane(props){
                     color={props.selected?"#121258":"#FFC039"}
                     onClick={() => {
                         props.setSelectedItem(food);
-                        if(props.selectedMember!=null){
+                        if(props.selectedMember.name!=""){
                             props.setPopUpVisivility(true);
                         }
                     }}

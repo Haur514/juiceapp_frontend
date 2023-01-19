@@ -13,7 +13,7 @@ function JuicePane(props){
                     color={props.selected?"#121258":"#FFC039"}
                     onClick={() => {
                         props.setSelectedItem(juice);
-                        if(props.selectedMember!=null){
+                        if(props.selectedMember.name!=""){
                             props.setPopUpVisivility(true);
                         }
                     }}
