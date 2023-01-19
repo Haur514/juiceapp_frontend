@@ -7,6 +7,7 @@ import './ItemCard.css'
 interface Props {
   color: string;
   name:string;
+  item:any;
   onClick: () => void;
   imgSrc: string;
   width: string;
@@ -18,6 +19,7 @@ const ItemCard: React.FC<Props> = ({
     name,
     onClick, 
     imgSrc,
+    item,
     width
   }) => { 
 
@@ -43,7 +45,7 @@ const ItemCard: React.FC<Props> = ({
       width={imgHeight}
       height={imgHeight}
     ></img>
-    <span>{name}</span>
+    <span>{name+" "+item.sellingPrice+"円"}</span>
     </button>
   );
 }
