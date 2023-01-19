@@ -2,6 +2,7 @@ import React from "react";
 import './FoodPane.css';
 import ItemCard from "../../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
+import { a } from "react-spring";
 
 function FoodPane(props){
     return(
@@ -14,7 +15,9 @@ function FoodPane(props){
                     color={props.selected?"#121258":"#FFC039"}
                     onClick={() => {
                         props.setSelectedItem(food);
-                        props.setPopUpVisivility(true);
+                        if(props.selectedMember!=null){
+                            props.setPopUpVisivility(true);
+                        }
                     }}
                     name = {food.name}
                     imgSrc = {props.logoDictionary[food.name]}

@@ -44,11 +44,13 @@ function ItemPane(props){
             <JuicePane 
                 setSelectedItem={props.setSelectedItem} 
                 setPopUpVisivility={setPopUpVisivility}
+                selectedMember={props.selectedMember}
                 juiceList={props.juiceList}
                 logoDictionary={logoDictionary}/>
             <FoodPane 
                 setSelectedItem={props.setSelectedItem} 
                 setPopUpVisivility={setPopUpVisivility}
+                selectedMember={props.selectedMember}
                 foodList={props.foodList}
                 logoDictionary={logoDictionary}/>
             <HistoryPane 
