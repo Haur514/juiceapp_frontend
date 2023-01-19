@@ -13,7 +13,9 @@ function JuicePane(props){
                 color={props.selected?"#121258":"#FFC039"}
                 onClick={() => {
                     props.setSelectedItem(juice);
-                    props.setPopUpVisivility(true);
+                    if(props.selectedMember!=null){
+                        props.setPopUpVisivility(true);
+                    }
                 }}
                 name = {juice.name}
                 imgSrc = {props.logoDictionary[juice.name]}

@@ -15,7 +15,9 @@ function FoodPane(props){
                     color={props.selected?"#121258":"#FFC039"}
                     onClick={() => {
                         props.setSelectedItem(food);
-                        props.setPopUpVisivility(true);
+                        if(props.selectedMember!=null){
+                            props.setPopUpVisivility(true);
+                        }
                     }}
                     name = {food.name}
                     imgSrc = {props.logoDictionary[food.name]}
