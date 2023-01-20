@@ -10,6 +10,13 @@ function MemberPane(props) {
         .filter(function (member) {
           return member.attribute == "teature";
         })
+        .sort(function(a,b){ 
+          if (a.displayName > b.displayName){
+            return 1;
+          }else{
+            return -1;
+          }
+        })
         .map((member) => {
           return (
             <MemberCard
@@ -25,6 +32,13 @@ function MemberPane(props) {
       {props.memberList
         .filter(function (member) {
           return member.attribute == "m2";
+        })
+        .sort(function(a,b){ 
+          if (a.displayName > b.displayName){
+            return 1;
+          }else{
+            return -1;
+          }
         })
         .map((member) => {
           return (
@@ -43,6 +57,13 @@ function MemberPane(props) {
         .filter(function (member) {
           return member.attribute == "m1";
         })
+        .sort(function(a,b){ 
+          if (a.displayName > b.displayName){
+            return 1;
+          }else{
+            return -1;
+          }
+        })
         .map((member) => {
           return (
             <MemberCard
@@ -59,6 +80,13 @@ function MemberPane(props) {
       {props.memberList
         .filter(function (member) {
           return member.attribute == "b4";
+        })
+        .sort(function(a,b){ 
+          if (a.displayName > b.displayName){
+            return 1;
+          }else{
+            return -1;
+          }
         })
         .map((member) => {
           return (

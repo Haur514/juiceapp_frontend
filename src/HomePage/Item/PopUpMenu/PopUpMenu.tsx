@@ -63,7 +63,10 @@ function PopUpMenu(props){
                         color="darkred"
                         height = "2em"
                         width = "40%"
-                        onClick={() => purchaseItem()}
+                        onClick={() => {
+                            purchaseItem()
+                            props.popupmenuProps.setSumPurchased(props.popupmenuProps.selectedItem.salesFigure+1);
+                        }}
                         radius = "0.2em"
                         fontColor="white"
                         children = {

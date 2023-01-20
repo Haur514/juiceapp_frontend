@@ -63,7 +63,7 @@ function HomePageParent(){
     useEffect(() => {
         fetchMemberList(setMemberList);
         fetchItemList(setJuiceList,setFoodList);
-    },[])
+    },[sumPurchased])
 
     
     return(
