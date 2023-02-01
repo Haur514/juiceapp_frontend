@@ -35,7 +35,6 @@ function Admin(){
         <div className="AdminPane">
             <PassWordPane/>
             <div className="TabPane"></div>
-            <img src={backgroundImg}/>
             <div className="ContentPane">
                 <PullDownMenu 
                     summary="ユーザの追加"
