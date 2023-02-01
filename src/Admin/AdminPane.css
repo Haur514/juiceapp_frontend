@@ -39,6 +39,9 @@
 .AdminPane .ContentPane{
     overflow-y:scroll;
     background-color: gray;
+    position:absolute;
+    bottom:0em;
+    top:3em;
 }
 
 
