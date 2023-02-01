@@ -29,7 +29,6 @@ const logState = state => {
             <Tab>Graph</Tab>
             <Tab>Admin</Tab>
             <Tab>Chat</Tab>
-            <Tab>Debug</Tab>
         </TabList>
         <TabPanel>
             <HomePageParent/>
@@ -42,11 +41,6 @@ const logState = state => {
         </TabPanel>
         <TabPanel>
             <ChatPane/>
-        </TabPanel>
-        <TabPanel>
-            <Toggle
-            toggled={true}
-            onClick={logState}/>
         </TabPanel>
     </Tabs>
   );

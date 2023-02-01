@@ -38,6 +38,7 @@
 
 .AdminPane .ContentPane{
     overflow-y:scroll;
+    background-color: gray;
 }
 
 

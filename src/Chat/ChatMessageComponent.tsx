@@ -23,7 +23,7 @@ function ChatMessageComponent(props){
                     <div className="ChatMessageDate">
                         {props.chat.date}
                     </div>
-                    <div 
+                    <button
                         className="DeleteButton"
                         onClick={async () => {
                             await fetchChatDelete(props.chat.id);
@@ -32,7 +32,7 @@ function ChatMessageComponent(props){
 
                         }}>
                         Delete
-                    </div> 
+                    </button> 
                     {/* <div className="GoodReactionButton" onClick={() => {
                         
                     }}> */}

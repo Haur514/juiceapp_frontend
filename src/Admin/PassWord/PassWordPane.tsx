@@ -23,7 +23,7 @@ function Admin(){
                 パスワードを入力してください<br></br><br></br>
                 Password: 
                 <input 
-                type="text"
+                type="password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}></input>
                 <button
