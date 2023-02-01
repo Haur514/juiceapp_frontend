@@ -66,6 +66,7 @@ function PopUpMenu(props){
                         onClick={() => {
                             purchaseItem()
                             props.popupmenuProps.setSumPurchased(props.popupmenuProps.selectedItem.salesFigure+1);
+                            props.popupmenuProps.setUpdate(!props.popupmenuProps.update);
                         }}
                         radius = "0.2em"
                         fontColor="white"

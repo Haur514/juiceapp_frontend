@@ -45,6 +45,15 @@ const fetchItemList = async (setJuiceList,setFoodList) => {
     });
 }
 
+function memberFindByName(memberList,searchName){
+    memberList.map((member) => {
+        if(member.name == searchName){
+            return member;
+        }
+    })
+    return {name:"",displayName:"",umpayedAmount:0,attribute:"",active:true};
+}
+
 function HomePageParent(){
 
     const [selectedMemberId, setSelectedMemberId] = useState("");
@@ -55,6 +64,8 @@ function HomePageParent(){
     const [juiceList,setJuiceList] = useState([]);
     const [foodList,setFoodList] = useState([]);
 
+    const [update,setUpdate] = useState(false);
+
     // 再レンダリング用のトリガとして利用するステート
     // もう少し賢い実装がありそうなので，TODO としておく
     // TODO
@@ -63,7 +74,12 @@ function HomePageParent(){
     useEffect(() => {
         fetchMemberList(setMemberList);
         fetchItemList(setJuiceList,setFoodList);
+        setSelectedMember(memberFindByName(memberList,selectedMember.name));
     },[sumPurchased])
+
+    const forseRender = () => {
+        setUpdate(!update);
+    }
 
     
     return(
@@ -78,6 +94,8 @@ function HomePageParent(){
                 setSelectedItem={setSelectedItem}
                 selectedItem={selectedItem}
                 juiceList={juiceList}
+                update={update}
+                setUpdate={setUpdate}
                 foodList={foodList}
                 selectedMemberId={selectedMemberId}
                 selectedMember={selectedMember}

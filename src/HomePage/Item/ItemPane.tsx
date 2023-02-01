@@ -34,6 +34,8 @@ function ItemPane(props){
         selectedItem: props.selectedItem,
         setSumPurchased:props.setSumPurchased,
         selectedMember:props.selectedMember,
+        setUpdate:props.setUpdate,
+        update:props.update,
     }
 
     const closePopUp = () => {
@@ -43,7 +45,9 @@ function ItemPane(props){
     return(
         <div className="ItemPane">
             <MemberInformation
-                selectedMember={props.selectedMember}/>
+                selectedMember={props.selectedMember}
+                update={props.update}
+                setUpdate={props.setUpdate}/>
             <JuicePane 
                 setSelectedItem={props.setSelectedItem} 
                 setPopUpVisivility={setPopUpVisivility}
