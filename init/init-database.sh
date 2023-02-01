@@ -23,11 +23,11 @@ curl -w '\n' 'http://localhost/backend/member/add' --data 'name=shins&displayNam
 curl -w '\n' 'http://localhost/backend/member/add' --data 'name=higo&displayName=肥後&attribute=teature' -XPOST
 
 ## デモ用のアイテムを追加
-curl -w '\n' 'http://localhost/backend/item/add' --data 'name=CocaCola\&sellingprice=80\&costprice=70\&grouping=juice' -XPOST
-curl -w '\n' 'http://localhost/backend/item/add' --data 'name=Fanta\&sellingprice=80\&costprice=70\&grouping=juice' -XPOST
-curl -w '\n' 'http://localhost/backend/item/add' --data 'name=GogoTea\&sellingprice=100\&costprice=80\&grouping=juice' -XPOST
-curl -w '\n' 'http://localhost/backend/item/add' --data 'name=Water\&sellingprice=100\&costprice=40\&grouping=juice' -XPOST
-curl -w '\n' 'http://localhost/backend/item/add' --data 'name=PotatoChips\&sellingprice=100\&costprice=80\&grouping=food' -XPOST
-curl -w '\n' 'http://localhost/backend/item/add' --data 'name=Dagashi\&sellingprice=100\&costprice=80\&grouping=food' -XPOST
+curl -w '\n' 'http://localhost/backend/item/add' --data 'name=CocaCola&sellingprice=80&costprice=70&grouping=juice' -XPOST
+curl -w '\n' 'http://localhost/backend/item/add' --data 'name=Fanta&sellingprice=80&costprice=70&grouping=juice' -XPOST
+curl -w '\n' 'http://localhost/backend/item/add' --data 'name=GogoTea&sellingprice=100&costprice=80&grouping=juice' -XPOST
+curl -w '\n' 'http://localhost/backend/item/add' --data 'name=Water&sellingprice=100&costprice=40&grouping=juice' -XPOST
+curl -w '\n' 'http://localhost/backend/item/add' --data 'name=PotatoChips&sellingprice=100&costprice=80&grouping=food' -XPOST
+curl -w '\n' 'http://localhost/backend/item/add' --data 'name=Dagashi&sellingprice=100&costprice=80&grouping=food' -XPOST
 
 
