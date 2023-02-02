@@ -51,7 +51,6 @@ function CancelButton(props) {
         }}
       >
         <animated.div
-          className="cancel_toggle_button_content"
           style={rotate_style}
         >
           ▶︎
