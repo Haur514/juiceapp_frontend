@@ -2,7 +2,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useRef } from "react";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import "./GraphPane.css";
 import SellingBarGraph from "./selling/SellingBarGraph";
 import LineChart from "./linechart/LineChart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

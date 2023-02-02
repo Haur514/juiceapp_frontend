@@ -4,10 +4,21 @@ import Button from "../../component/Button";
 import "./ItemAdd.css"
 
 const addItem = async (itemId,sellingPrice,costPrice,grouping) =>{
-    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item/add?name=${itemId}&sellingprice=${sellingPrice}&costprice=${costPrice}&grouping=${grouping}`, {
-    method: 'GET',
-    mode: 'cors'
+    let data = {
+        name: itemId,
+        sellingprice: sellingPrice,
+        costprice: costPrice,
+        grouping: grouping
+    }
+    const response = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item/add?name=${itemId}&sellingprice=${sellingPrice}&costprice=${costPrice}&grouping=${grouping}`, {
+    method: 'POST',
+    mode: 'cors',
+    headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
     });
+    console.log(response);
 }
 
 function ItemAdd(){
