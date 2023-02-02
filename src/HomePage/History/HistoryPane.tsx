@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from "react";
-import './HistoryPane.css';
-import ItemCard from "../../component/ItemCard";
-import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
-import HistoryCard from "./HistoryCard";
-import HistoryEntity from "../../entity/HistoryEntity";
-import { hasProps } from "@react-spring/core/dist/declarations/src/helpers";
-import { update } from "react-spring";
+import HistoryCard from "./card/HistoryCard";
+import styled from "styled-components";
 
 const fetchHistoryData = async (selectedMemberId: string,setHistories) =>{
-    let data = [];
     if(selectedMemberId==""){
+        setHistories([]);
         return;
     }
 
-    const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/history?name=${selectedMemberId}`, {
+    const inputdata = await fetch(
+        `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/history?name=${selectedMemberId}`, {
         method: 'GET',
         mode: 'cors'
     })
@@ -21,35 +17,47 @@ const fetchHistoryData = async (selectedMemberId: string,setHistories) =>{
     .then(histories => {
         setHistories(histories);
     });
-    
 }
 
-function HistoryPane(props){
+function HistoryPane({
+    selectedMember
+}){
 
     const [histories, setHistories] = useState([]);
 
     useEffect(() => {
-        fetchHistoryData(props.selectedMemberId,setHistories);
-    },[props.selectedMemberId,props.sumPurchased])
+        fetchHistoryData(selectedMember.name,setHistories);
+    },[selectedMember])
 
     const updateHistory = () =>{
-        fetchHistoryData(props.selectedMemberId,setHistories);
+        fetchHistoryData(selectedMember.name,setHistories);
     }
     
-
     return(
-        <div className="HistoryPane">
-            <div className="CategoryName">History</div>
-            <div className="HistoryPane-flex">
+        <MainHistoryPane>
+            <CategoryName>購入履歴</CategoryName>
             {histories.map(history=>
                 <HistoryCard 
                     history={history}
                     updateHistory={updateHistory}
                     key={history.id}/>
             )}
-            </div>
-        </div>
+        </MainHistoryPane>
     );
 }
+
+const MainHistoryPane = styled.div`
+    width:100%;
+    border: solid 1px black;
+    overflow-y:scroll;
+    overflow-x:hidden;
+`
+const CategoryName = styled.div`
+    background-color: #303030;
+    color:greenyellow;
+    font-weight: bold;
+    font-size:2em;
+`
+
 
 export default HistoryPane;

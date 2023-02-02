@@ -1,11 +1,12 @@
 import React from "react";
 import './JuicePane.css';
 import ItemCard from "../../../component/ItemCard";
+import styled from "styled-components";
 
 function JuicePane(props){
     return(
         <div className="JuicePane">
-            <div className="CategoryName">Juice</div>
+            <CategoryName>Juice</CategoryName>
             <div className="ItemPane-Content JuicePane-flex">
             {props.juiceList.sort((a,b) => - a.salesFigure + b.salesFigure).map((juice) => {
                 return(
@@ -29,5 +30,12 @@ function JuicePane(props){
         </div>
     );
 }
+
+const CategoryName = styled.div`
+    background-color: #303030;
+    color:greenyellow;
+    font-weight: bold;
+    font-size:2em;
+`
 
 export default JuicePane;

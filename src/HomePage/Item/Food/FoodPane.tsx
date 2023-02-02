@@ -3,11 +3,12 @@ import './FoodPane.css';
 import ItemCard from "../../../component/ItemCard";
 import LogoCocaCora from "../../../image/logo_coca_cora.jpeg";
 import { a } from "react-spring";
+import styled from "styled-components";
 
 function FoodPane(props){
     return(
         <div className="FoodPane">
-            <div className="CategoryName">Food</div>
+            <CategoryName>食品</CategoryName>
             <div className="ItemPane-Content FoodPane-flex">
             {props.foodList.sort((a,b) => - a.salesFigure + b.salesFigure).map((food) => {
                 return(
@@ -32,5 +33,12 @@ function FoodPane(props){
         </div>
     );
 }
+
+const CategoryName = styled.div`
+    background-color: #303030;
+    color:greenyellow;
+    font-weight: bold;
+    font-size:2em;
+`
 
 export default FoodPane;
