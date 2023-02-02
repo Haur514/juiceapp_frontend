@@ -24,7 +24,7 @@ const switchMemberActivity = async (name: string, activity: boolean) => {
     activity: activity,
   };
   await fetch(
-    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member/setactivity?name=${name}&activity=${activity}`,
+    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member/setactivity`,
     {
       method: "POST",
       mode: "cors",
@@ -41,7 +41,7 @@ const deleteMember = async (member) => {
     name: member,
   };
   await fetch(
-    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member/delete?name=${member}`,
+    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member/delete`,
     {
       method: "POST",
       mode: "cors",
