@@ -1,6 +1,25 @@
+
 .Cancel-Slide-Pane{
     position:relative;
     width:10em;
+}
+
+.cancel-button{
+    position:relative;
+    height:100%;
+    background-color: red;
+    margin-left:auto;
+    color:white;
+    padding:.5em 0;
+}
+
+.cancel_toggle_button{
+    position:relative;
+    height:100%;
+    background-color: rgb(48,48,48);
+    vertical-align: middle;
+    padding-left:.5em;
+    padding-right:.5em;
 }
 
 .cancel_toggle_button{
@@ -9,6 +28,7 @@
     color:greenyellow;
 
 }
+
 
 .history-cancel-toggle{
     width:15%;

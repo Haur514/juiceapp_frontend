@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import "./HistoryCard.css";
-import Button from "../../component/Button";
-import { Transition } from "react-transition-group";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 
