@@ -3,6 +3,7 @@ import "./HistoryCard.css";
 import Button from "../../component/Button";
 import { Transition } from "react-transition-group";
 import { useSpring, animated } from "react-spring";
+import styled from "styled-components";
 
 // import ToggleButton from 'react-bootstrap/Switch';
 
@@ -42,38 +43,83 @@ function HistoryCard(props) {
   };
 
   return (
-    <div className="HistoryPane">
-      <div className="HistoryCardPane">
-        <div className="history-date">{props.history.date}</div>
-        <div className="history-purchasedItem">{props.history.item}</div>
-        <div className="history-money">{props.history.price}円</div>
+    <HistoryCardPane>
+      <HistoryCardDate>{props.history.date}</HistoryCardDate>
+      <HistoryCardItem>{props.history.item}</HistoryCardItem>
+      <HistoryCardMoney>{props.history.price}円</HistoryCardMoney>
+      <animated.div
+        className="cancel-button"
+        style={cancel_style}
+        onClick={async () => {
+          setCancelToggle(false);
+          await postRecall(props.history);
+          props.updateHistory();
+        }}
+      >
+        <animated.span style={opacity_style}>Cancel</animated.span>
+      </animated.div>
+      <div
+        className="cancel_toggle_button"
+        onClick={() => {
+          handle_cancel_toggle();
+        }}
+      >
         <animated.div
-          className="cancel-button"
-          style={cancel_style}
-          onClick={async () => {
-            setCancelToggle(false);
-            await postRecall(props.history);
-            props.updateHistory();
-          }}
+          className="cancel_toggle_button_content"
+          style={rotate_style}
         >
-          <animated.span style={opacity_style}>Cancel</animated.span>
+          ▶︎
         </animated.div>
-        <div
-          className="cancel_toggle_button"
-          onClick={() => {
-            handle_cancel_toggle();
-          }}
-        >
-          <animated.div
-            className="cancel_toggle_button_content"
-            style={rotate_style}
-          >
-            ▶︎
-          </animated.div>
-        </div>
       </div>
-    </div>
+    </HistoryCardPane>
   );
 }
+
+const HistoryCardPane = styled.div`
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgb(180, 180, 180);
+  height: 2em;
+  font-size: 1em;
+  display: flex;
+  margin: 0.5em 0em 0.5em 0em;
+`;
+
+const HistoryCardDate = styled.div`
+  margin-left: 1em;
+  width: 50%;
+  padding: 0.5em 0;
+`;
+
+const HistoryCardItem = styled.div`
+  margin-left: 2em;
+  width: 15%;
+  padding: 0.5em 0;
+`;
+
+const HistoryCardMoney = styled.div`
+  margin-left: 2em;
+  width: 15%;
+  padding: 0.5em 0;
+`;
+
+const CancelButton = styled.div`
+  position: relative;
+  height: 100%;
+  background-color: red;
+  margin-left: auto;
+  color: white;
+  padding: 0.5em 0;
+`;
+
+const CancelToggleButton = styled.div`
+  position:relative;
+  height:100%;
+  background-color: rgb(48,48,48);
+  vertical-align: middle;
+  padding-left:.5em;
+  padding-right:.5em;
+`
 
 export default HistoryCard;
