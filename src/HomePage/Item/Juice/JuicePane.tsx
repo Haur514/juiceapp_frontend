@@ -1,5 +1,5 @@
 import React from "react";
-import ItemCard from "../../../component/ItemCard";
+import ItemCard from "../component/ItemCard";
 import styled from "styled-components";
 
 function JuicePane(props){
