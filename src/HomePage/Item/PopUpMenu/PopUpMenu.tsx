@@ -49,12 +49,10 @@ function PopUpMenu(props){
                 <div className="popup-UserInformation">
                     {props.popupmenuProps.selectedMember == null ? "hoge" :props.popupmenuProps.selectedMember.displayName}さん
                 </div>
-                {/* <div className="buying">今月の支払い : 0円</div> */}
                 <div className="item-info">
                     <img src={props.popupmenuProps.imgSrc} className="menu-icon"/>
                     <div style={{marginRight:"1em"}}>{props.popupmenuProps.selectedItem == null? "hoge" : props.popupmenuProps.selectedItem.name}</div>
                     <div>{props.popupmenuProps.selectedItem == null? "hoge" : props.popupmenuProps.selectedItem.sellingPrice}円</div>
-                    {/* <span>{props.popupmenuProps.selectedItem.sellingprice}</span> */}
                 </div>
                 <div className="select-button-pane">
                     <Button
