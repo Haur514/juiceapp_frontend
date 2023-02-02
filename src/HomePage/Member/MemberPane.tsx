@@ -20,7 +20,7 @@ function MemberPane(props) {
         .map((member) => {
           return (
             <MemberCard
-              selected={props.selectedMemberId == member.name ? true : false}
+              selected={props.selectedMember == member ? true : false}
               member={member}
               setSelectedMemberId={props.setSelectedMemberId}
               setSelectedMember={props.setSelectedMember}
@@ -43,7 +43,7 @@ function MemberPane(props) {
         .map((member) => {
           return (
             <MemberCard
-              selected={props.selectedMemberId == member.name ? true : false}
+              selected={props.selectedMember == member ? true : false}
               member={member}
               setSelectedMemberId={props.setSelectedMemberId}
               setSelectedMember={props.setSelectedMember}
@@ -67,7 +67,7 @@ function MemberPane(props) {
         .map((member) => {
           return (
             <MemberCard
-              selected={props.selectedMemberId == member.name ? true : false}
+              selected={props.selectedMember == member ? true : false}
               member={member}
               setSelectedMemberId={props.setSelectedMemberId}
               setSelectedMember={props.setSelectedMember}
@@ -91,7 +91,7 @@ function MemberPane(props) {
         .map((member) => {
           return (
             <MemberCard
-              selected={props.selectedMemberId == member.name ? true : false}
+              selected={props.selectedMember == member ? true : false}
               member={member}
               setSelectedMemberId={props.setSelectedMemberId}
               setSelectedMember={props.setSelectedMember}
