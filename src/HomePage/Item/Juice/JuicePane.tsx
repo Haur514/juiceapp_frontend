@@ -1,13 +1,12 @@
 import React from "react";
-import './JuicePane.css';
 import ItemCard from "../../../component/ItemCard";
 import styled from "styled-components";
 
 function JuicePane(props){
     return(
-        <div className="JuicePane">
-            <CategoryName>Juice</CategoryName>
-            <div className="ItemPane-Content JuicePane-flex">
+        <JuicePaneMain>
+            <CategoryName>ジュース</CategoryName>
+            <JuicePaneContent>
             {props.juiceList.sort((a,b) => - a.salesFigure + b.salesFigure).map((juice) => {
                 return(
                 <ItemCard
@@ -26,10 +25,25 @@ function JuicePane(props){
                 />
                 )
             })}
-            </div>
-        </div>
+            </JuicePaneContent>
+        </JuicePaneMain>
     );
 }
+
+const JuicePaneContent = styled.div`
+    overflow-x: scroll;
+    display:flex;
+    width:100%;
+    height:85%;
+    border: solid 1px black;
+    margin-bottom: 1em;
+    background-color:#787878;
+`
+
+const JuicePaneMain = styled.div`
+    height:20em;
+    margin-bottom:1em;
+`
 
 const CategoryName = styled.div`
     background-color: #303030;
