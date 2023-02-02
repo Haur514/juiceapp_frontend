@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
-import "./ItemAdd.css"
 
 const addItem = async (itemId,sellingPrice,costPrice,grouping) =>{
     let data = {
@@ -10,7 +9,7 @@ const addItem = async (itemId,sellingPrice,costPrice,grouping) =>{
         costprice: costPrice,
         grouping: grouping
     }
-    const response = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item/add?name=${itemId}&sellingprice=${sellingPrice}&costprice=${costPrice}&grouping=${grouping}`, {
+    const response = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item/add`, {
     method: 'POST',
     mode: 'cors',
     headers: {

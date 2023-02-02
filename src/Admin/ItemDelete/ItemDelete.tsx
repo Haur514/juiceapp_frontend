@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import Select from "react-select";
 import Button from "../../component/Button";
-import "./ItemDelete.css";
 import { Toggle } from "../../component/Toggle";
 
 const fetchItemList = async (setItemList) => {
@@ -38,11 +37,18 @@ const switchItemActivity = async (id: string, activity: boolean) => {
 };
 
 const deleteItem = async (item) => {
+    let data = {
+        name: item
+    }
   await fetch(
-    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item/delete?name=${item}`,
+    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item/delete`,
     {
-      method: "GET",
+      method: "POST",
       mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     }
   );
 };
