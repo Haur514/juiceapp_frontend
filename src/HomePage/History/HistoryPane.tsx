@@ -52,6 +52,7 @@ const MainHistoryPane = styled.div`
     width:100%;
     border: solid 1px black;
     overflow-y:scroll;
+    overflow-x:hidden;
 `
 const CategoryName = styled.div`
     background-color: #303030;
