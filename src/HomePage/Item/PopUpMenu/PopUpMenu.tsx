@@ -19,11 +19,7 @@ function PopUpMenu(props){
         if(props.popupmenuProps.selectedMember==null){
             return;
         }
-
-        // await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase?name=${props.popupmenuProps.selectedMember.name}&item=${props.popupmenuProps.selectedItem.name}`, {
-        // method: 'GET',
-        // mode: 'cors'
-        // });
+        
         let data = {
             name: props.popupmenuProps.selectedMember.name,
             item: props.popupmenuProps.selectedItem.name

@@ -4,13 +4,24 @@ import Button from "../../component/Button";
 import "./UserAddPane.css";
 
 const addUser = async (userId, displayName, attribute) => {
-  const inputdata = await fetch(
-    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member/add?name=${userId}&displayName=${displayName}&attribute=${attribute}`,
+
+  let data = {
+    name: userId,
+    displayName: displayName,
+    attribute: attribute
+  }
+  const response = await fetch(
+    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/member/add`,
     {
-      method: "GET",
+      method: "POST",
       mode: "cors",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
     }
   );
+  console.log(response);
 };
 
 function UserAddPane() {
