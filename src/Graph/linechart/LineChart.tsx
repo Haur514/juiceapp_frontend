@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
-
+import "./LineChart.css"
 
 const fetchHistoryOfEachMonth = async (setHistoryOfEachMonth) => {
-  const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/history/eachmonth`, {
-    method: "GET",
-    mode: "cors",
-  })
+  const inputdata = await fetch(
+    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/history/eachmonth`,
+    {
+      method: "GET",
+      mode: "cors",
+    }
+  )
     .then((res) => res.json())
     .then((historyOfEachMonth) => {
       setHistoryOfEachMonth(historyOfEachMonth);
     });
 };
 
-
-function LineChart() {
-
-  const [historyOfEachMonth,setHistoryOfEachMonth] = useState([]);
+function LineChart(props) {
+  const [historyOfEachMonth, setHistoryOfEachMonth] = useState([]);
 
   useEffect(() => {
     fetchHistoryOfEachMonth(setHistoryOfEachMonth);
-  },[]);
+  }, []);
 
   const labels = Object.keys(historyOfEachMonth);
 
@@ -31,77 +32,60 @@ function LineChart() {
       {
         label: "売り上げ",
         data: labels.map((label) => historyOfEachMonth[label]),
-        borderColor: "rgb(75, 192, 192)",
+        borderColor: "greenyellow",
+        backgroundColor: "rgba(191,253,91,0.2)",
       },
-      // {
-      //   label: "フード売り上げ",
-      //   data: [60, 55, 57, 61, 75, 50],
-      //   // borderColor: "rgb(75, 100, 192)",
-      //   borderColor: "rgb(191, 253, 91)",
-      //   backgroundColor: "rgba(191,253,91,0.2)",
-      // },
     ],
-    
   };
 
   const options: {} = {
     plugins: {
-        legend: {
-          display:true,
-          labels:{
-            color:"white",
-            font:{
-              size: 20
-            }
+      legend: {
+        display: true,
+        labels: {
+          color: "white",
+          font: {
+            size: 20,
           },
-          position: "right" as const,
         },
-        title: {
-          display: true,
-          text: "各月の売り上げグラフ",
-          color:"white",
-          font:{
-            size: 30
-          }
+        position: "right" as const,
+      },
+      title: {
+        display: true,
+        text: "各月の売り上げグラフ",
+        color:"white",
+        font: {
+          size: 30,
         },
       },
+    },
+    responsive: true,
     maintainAspectRatio: false,
-    scales:{
-        y:{
-          ticks:{
-            color:"white",
-            font: {
-              size:20
-            }
-          }
+    scales: {
+      y: {
+        ticks: {
+          color: "white",
+          font: {
+            size: 20,
+          },
         },
-        x:{
-          ticks:{
-            color:"white",
-            font:{
-              size:20
-            }
-          }
-        }
-      }
-  };
-
-  const divStyle: React.CSSProperties = {
-    marginLeft: "auto",
-    marginRight: "auto",
-    width: "100%",
-    height: "80vh",
-    backgroundColor:"#303030",
+      },
+      x: {
+        ticks: {
+          color: "white",
+          font: {
+            size: 20,
+          },
+        },
+      },
+    },
   };
 
   return (
-    <div style={divStyle}>
+    <div className="LineChart">
       <Line
-        height={300}
-        width={300}
         data={graphData}
         options={options}
-        id="chart-key2"
       />
     </div>
   );

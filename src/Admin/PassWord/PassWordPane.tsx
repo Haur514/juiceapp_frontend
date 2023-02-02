@@ -7,7 +7,7 @@ function Admin(){
     const [password,setPassword] = useState("");
     const [visible,setVisible] = useState(true);
 
-    
+
     return(
         <div className="PassWordPane" 
         style={{visibility: visible ? "visible":"hidden"}}>

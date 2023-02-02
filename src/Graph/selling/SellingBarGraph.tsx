@@ -109,7 +109,7 @@ export default function SellingBarGraph(props) {
     labels,
     datasets: [
       {
-        label: "Dataset 1",
+        label: "売れた個数",
         data: labels.map((label) => dict[label]),
         borderColor: "rgb(191, 253, 91)",
         backgroundColor: "rgba(191,253,91,0.2)",

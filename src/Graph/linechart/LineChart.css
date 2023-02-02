@@ -1,7 +1,8 @@
-.LineChart{
-    position:relative;
-    height:80vh;
-    width:100%;
-    background-color:#303030;
-    color:greenyellow;
-  }
+.LineChart {
+  position: absolute;
+  bottom: 0em;
+  top: 6em;
+  right:0em;
+  left:0em;
+  background-color: #303030;
+}
