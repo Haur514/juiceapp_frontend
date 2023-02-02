@@ -19,12 +19,28 @@ function PopUpMenu(props){
         if(props.popupmenuProps.selectedMember==null){
             return;
         }
-        const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase?name=${props.popupmenuProps.selectedMember.name}&item=${props.popupmenuProps.selectedItem.name}`, {
-        method: 'GET',
-        mode: 'cors'
-        });
+
+        // await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase?name=${props.popupmenuProps.selectedMember.name}&item=${props.popupmenuProps.selectedItem.name}`, {
+        // method: 'GET',
+        // mode: 'cors'
+        // });
+        let data = {
+            name: props.popupmenuProps.selectedMember.name,
+            item: props.popupmenuProps.selectedItem.name
+        }
+        console.log(JSON.stringify(data))
+        const response = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/purchase`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+            });
+        
         props.popupmenuProps.setSumPurchased((prev) => prev+1);
         closePopUp();
+        console.log(response.json());
     }
 
     const closePopUp = () => {
