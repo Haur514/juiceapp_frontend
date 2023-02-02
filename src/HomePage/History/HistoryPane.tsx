@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HistoryCard from "./HistoryCard";
+import HistoryCard from "./card/HistoryCard";
 import styled from "styled-components";
 
 const fetchHistoryData = async (selectedMemberId: string,setHistories) =>{
@@ -36,14 +36,12 @@ function HistoryPane({
     return(
         <MainHistoryPane>
             <CategoryName>購入履歴</CategoryName>
-            <div className="HistoryPane-flex">
             {histories.map(history=>
                 <HistoryCard 
                     history={history}
                     updateHistory={updateHistory}
                     key={history.id}/>
             )}
-            </div>
         </MainHistoryPane>
     );
 }
