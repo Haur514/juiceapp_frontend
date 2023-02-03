@@ -1,107 +1,60 @@
 import React, { useState } from "react";
-import "./MemberPane.css";
-import MemberCard from "./MemberCard";
+import MemberCard from "./component/MemberCard";
+import styled from "styled-components";
+import MemberPanePerAttribute from "./component/MemberPanePerAttribute";
 
-function MemberPane(props) {
+function MemberPane({
+  setSelectedMemberId,
+  selectedMemberId,
+  selectedMember,
+  setSelectedMember,
+  memberList,
+}) {
   return (
-    <div className="MemberPane">
-      <div className="attribute">Teature</div>
-      {props.memberList
-        .filter(function (member) {
-          return member.attribute == "teature";
-        })
-        .sort(function(a,b){ 
-          if (a.displayName > b.displayName){
-            return 1;
-          }else{
-            return -1;
-          }
-        })
-        .map((member) => {
-          return (
-            <MemberCard
-              selected={props.selectedMember == member ? true : false}
-              member={member}
-              setSelectedMemberId={props.setSelectedMemberId}
-              setSelectedMember={props.setSelectedMember}
-              key={member.name}
-            />
-          );
-        })}
-      <div className="attribute">Master 2</div>
-      {props.memberList
-        .filter(function (member) {
-          return member.attribute == "m2";
-        })
-        .sort(function(a,b){ 
-          if (a.displayName > b.displayName){
-            return 1;
-          }else{
-            return -1;
-          }
-        })
-        .map((member) => {
-          return (
-            <MemberCard
-              selected={props.selectedMember == member ? true : false}
-              member={member}
-              setSelectedMemberId={props.setSelectedMemberId}
-              setSelectedMember={props.setSelectedMember}
-
-              key={member.name}
-            />
-          );
-        })}
-      <div className="attribute">Master 1</div>
-      {props.memberList
-        .filter(function (member) {
-          return member.attribute == "m1";
-        })
-        .sort(function(a,b){ 
-          if (a.displayName > b.displayName){
-            return 1;
-          }else{
-            return -1;
-          }
-        })
-        .map((member) => {
-          return (
-            <MemberCard
-              selected={props.selectedMember == member ? true : false}
-              member={member}
-              setSelectedMemberId={props.setSelectedMemberId}
-              setSelectedMember={props.setSelectedMember}
-
-              key={member.name}
-            />
-          );
-        })}
-      <div className="attribute">Bachelor 4</div>
-      {props.memberList
-        .filter(function (member) {
-          return member.attribute == "b4";
-        })
-        .sort(function(a,b){ 
-          if (a.displayName > b.displayName){
-            return 1;
-          }else{
-            return -1;
-          }
-        })
-        .map((member) => {
-          return (
-            <MemberCard
-              selected={props.selectedMember == member ? true : false}
-              member={member}
-              setSelectedMemberId={props.setSelectedMemberId}
-              setSelectedMember={props.setSelectedMember}
-
-              key={member.name}
-            />
-          );
-        })}
-    </div>
+    <MainMemberPane>
+      <MemberPanePerAttribute
+        description={"先生"}
+        attribute={"teature"}
+        memberList={memberList}
+        selectedMember={selectedMember}
+        setSelectedMember={setSelectedMember}
+      />
+      <MemberPanePerAttribute
+        description={"修士2年"}
+        attribute={"m2"}
+        memberList={memberList}
+        selectedMember={selectedMember}
+        setSelectedMember={setSelectedMember}
+      />
+      <MemberPanePerAttribute
+        description={"修士1年"}
+        attribute={"m1"}
+        memberList={memberList}
+        selectedMember={selectedMember}
+        setSelectedMember={setSelectedMember}
+      />
+      <MemberPanePerAttribute
+        description={"学部4年"}
+        attribute={"b4"}
+        memberList={memberList}
+        selectedMember={selectedMember}
+        setSelectedMember={setSelectedMember}
+      />
+    </MainMemberPane>
   );
 }
+
+const MainMemberPane = styled.div`
+  overflow: scroll;
+  width: 30%;
+  height: 90vh;
+  border-width: 2px;
+  border-color: black;
+  border: solid 1px #333;
+  margin: 5px;
+
+  background-color: rgb(47, 47, 47);
+  color: greenyellow;
+`;
 
 export default MemberPane;
