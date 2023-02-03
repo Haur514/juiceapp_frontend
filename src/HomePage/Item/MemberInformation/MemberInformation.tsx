@@ -1,18 +1,36 @@
 import React from "react";
-import './MemberInformation.css';
+import styled from "styled-components";
 
-function MemberInformation(props){
+function MemberInformation({
+    selectedMember
+}){
 
 
     return(
-        <div className="MemberInformation">
-            <div className="CategoryName">ユーザ情報</div>
-            <div className="MemberInformationPane-Content">
-                <span>名前：{props.selectedMember.name==""?"---":props.selectedMember.displayName}</span><br></br>
-                <span>今月の支払い分：{props.selectedMember.umpayedAmount}円</span>
-            </div>
-        </div>
+        <MemberInformationPane>
+            <CategoryName>ユーザ情報</CategoryName>
+            <MemberInformationPaneContent>
+                <span>名前：{selectedMember.name==""?"---":selectedMember.displayName}様</span><br></br>
+                <span>今月の支払い分：{selectedMember.umpayedAmount}円</span>
+            </MemberInformationPaneContent>
+        </MemberInformationPane>
     );
 }
+
+const MemberInformationPane = styled.div`
+    margin-bottom:1em;
+    border: 1px solid black;
+`
+
+const CategoryName=styled.div`
+    background-color: #303030;
+    color:greenyellow;
+    font-weight: bold;
+    font-size:2em;
+`
+
+const MemberInformationPaneContent = styled.div`
+font-size:2em;
+`
 
 export default MemberInformation;

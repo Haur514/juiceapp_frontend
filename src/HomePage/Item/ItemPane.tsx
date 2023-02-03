@@ -48,8 +48,6 @@ function ItemPane(props) {
     <MainItemPane>
       <MemberInformation
         selectedMember={props.selectedMember}
-        update={props.update}
-        setUpdate={props.setUpdate}
       />
       <JuicePane
         setSelectedItem={props.setSelectedItem}
