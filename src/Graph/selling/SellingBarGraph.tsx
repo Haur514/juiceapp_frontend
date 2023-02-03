@@ -9,10 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
-import { faker } from "@faker-js/faker";
-
-import "./SellingBarGraph.css";
-import { lstat } from "fs/promises";
+import styled from "styled-components";
 
 ChartJS.register(
   CategoryScale,
@@ -118,8 +115,17 @@ export default function SellingBarGraph(props) {
   };
 
   return (
-    <div className="SellingBarGraph">
+    <SellingBarGraphPane>
       <Bar options={options} data={data} height={props.height}/>
-    </div>
+    </SellingBarGraphPane>
   );
 }
+
+const SellingBarGraphPane = styled.div`
+position:absolute;
+bottom:0em;
+top:6em;
+width:100%;
+background-color:#303030;
+color:greenyellow;
+`

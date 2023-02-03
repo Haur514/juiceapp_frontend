@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
-import "./LineChart.css"
+import styled from "styled-components";
 
 const fetchHistoryOfEachMonth = async (setHistoryOfEachMonth) => {
   const inputdata = await fetch(
@@ -17,7 +17,7 @@ const fetchHistoryOfEachMonth = async (setHistoryOfEachMonth) => {
     });
 };
 
-function LineChart(props) {
+function LineChart() {
   const [historyOfEachMonth, setHistoryOfEachMonth] = useState([]);
 
   useEffect(() => {
@@ -82,13 +82,21 @@ function LineChart(props) {
   };
 
   return (
-    <div className="LineChart">
+    <LineChartPane>
       <Line
         data={graphData}
         options={options}
       />
-    </div>
+    </LineChartPane>
   );
 }
 
+const LineChartPane = styled.div`
+  position: absolute;
+  bottom: 0em;
+  top: 6em;
+  right:0em;
+  left:0em;
+  background-color: #303030;
+`
 export default LineChart;
