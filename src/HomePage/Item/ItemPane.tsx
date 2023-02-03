@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ItemPane.css";
+
 import FoodPane from "./Food/FoodPane";
 import JuicePane from "./Juice/JuicePane";
 import HistoryPane from "../History/HistoryPane";
@@ -12,6 +12,7 @@ import LogoGogoTea from "./../../image/logo_tea.jpeg";
 import LogoPotechi from "./../../image/logo_potechi.jpeg";
 import LogoDagashi from "./../../image/logo_dagashi.jpeg";
 import MemberInformation from "./MemberInformation/MemberInformation";
+import styled from "styled-components";
 
 function ItemPane(props) {
   const [is_popup_visible, setPopUpVisivility] = useState(false);
@@ -32,7 +33,6 @@ function ItemPane(props) {
       logoDictionary[
         props.selectedItem == null ? "CocaCola" : props.selectedItem.name
       ],
-    selectedMemberId: props.selectedMemberId,
     selectedItem: props.selectedItem,
     setSumPurchased: props.setSumPurchased,
     selectedMember: props.selectedMember,
@@ -45,7 +45,7 @@ function ItemPane(props) {
   };
 
   return (
-    <div className="ItemPane">
+    <MainItemPane>
       <MemberInformation
         selectedMember={props.selectedMember}
         update={props.update}
@@ -68,9 +68,31 @@ function ItemPane(props) {
       <HistoryPane
         selectedMember={props.selectedMember}
       />
-      <PopUpMenu popupmenuProps={popupmenuProps} />
-    </div>
+      <PopUpMenu 
+          visibility={is_popup_visible}
+          setPopUpVisivility={setPopUpVisivility}
+          imgSrc={
+            logoDictionary[
+              props.selectedItem == null ? "CocaCola" : props.selectedItem.name
+            ]}
+          selectedItem={props.selectedItem}
+          setSumPurchased={props.setSumPurchased}
+          selectedMember={props.selectedMember}
+          setUpdate={props.setUpdate}
+          update={props.update}
+       />
+    </MainItemPane>
   );
 }
+
+const MainItemPane = styled.div`
+width:70%;
+height:90vh;
+border-width:2px;
+border-color:black;
+border: solid 1px #333;
+margin:5px;
+overflow-y: scroll;
+`
 
 export default ItemPane;

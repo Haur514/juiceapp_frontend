@@ -1,18 +1,3 @@
-.popup-menu-background{
-    position: fixed;
-    inset:0;
-    margin: auto;
-
-    width: 100vw;
-    height:100vh;
-
-    background-color:rgba(0,0,0,0.7);
-
-    visibility: hidden;
-    transform-origin: center center;
-    transition: transform .2s;
-}
-
 .popup-menu{
     position: fixed;
     inset:0;
@@ -35,29 +20,6 @@
     transition: transform 0.2s;
 }
 
-.popup-menu .item-info{
-    display: flex;
-    align-items: center;
-    margin-top:1em;
-    margin-bottom:1em;
-    
-}
-
-.popup-menu .select-button-pane{
-    vertical-align: bottom;
-}
-
-.menu-icon{
-    width:2em;
-    height:2em;
-    border-radius: 50%;
-}
-
 .visible{
     transform: scale(1)
-}
-
-.popup-menu Button{
-    margin-left:0.5em;
-    margin-right:0.5em;
 }
