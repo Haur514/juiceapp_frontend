@@ -1,6 +1,5 @@
 import React from "react";
 import './MemberInformation.css';
-import ItemCard from "../../../component/ItemCard";
 
 function MemberInformation(props){
 
