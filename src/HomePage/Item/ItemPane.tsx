@@ -32,7 +32,6 @@ function ItemPane(props) {
       logoDictionary[
         props.selectedItem == null ? "CocaCola" : props.selectedItem.name
       ],
-    selectedMemberId: props.selectedMemberId,
     selectedItem: props.selectedItem,
     setSumPurchased: props.setSumPurchased,
     selectedMember: props.selectedMember,
@@ -68,7 +67,19 @@ function ItemPane(props) {
       <HistoryPane
         selectedMember={props.selectedMember}
       />
-      <PopUpMenu popupmenuProps={popupmenuProps} />
+      <PopUpMenu 
+          visibility={is_popup_visible}
+          setPopUpVisivility={setPopUpVisivility}
+          imgSrc={
+            logoDictionary[
+              props.selectedItem == null ? "CocaCola" : props.selectedItem.name
+            ]}
+          selectedItem={props.selectedItem}
+          setSumPurchased={props.setSumPurchased}
+          selectedMember={props.selectedMember}
+          setUpdate={props.setUpdate}
+          update={props.update}
+       />
     </div>
   );
 }
