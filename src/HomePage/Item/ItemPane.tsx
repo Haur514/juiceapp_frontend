@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ItemPane.css";
+
 import FoodPane from "./Food/FoodPane";
 import JuicePane from "./Juice/JuicePane";
 import HistoryPane from "../History/HistoryPane";
@@ -12,6 +12,7 @@ import LogoGogoTea from "./../../image/logo_tea.jpeg";
 import LogoPotechi from "./../../image/logo_potechi.jpeg";
 import LogoDagashi from "./../../image/logo_dagashi.jpeg";
 import MemberInformation from "./MemberInformation/MemberInformation";
+import styled from "styled-components";
 
 function ItemPane(props) {
   const [is_popup_visible, setPopUpVisivility] = useState(false);
@@ -44,7 +45,7 @@ function ItemPane(props) {
   };
 
   return (
-    <div className="ItemPane">
+    <MainItemPane>
       <MemberInformation
         selectedMember={props.selectedMember}
         update={props.update}
@@ -80,8 +81,18 @@ function ItemPane(props) {
           setUpdate={props.setUpdate}
           update={props.update}
        />
-    </div>
+    </MainItemPane>
   );
 }
+
+const MainItemPane = styled.div`
+width:70%;
+height:90vh;
+border-width:2px;
+border-color:black;
+border: solid 1px #333;
+margin:5px;
+overflow-y: scroll;
+`
 
 export default ItemPane;
