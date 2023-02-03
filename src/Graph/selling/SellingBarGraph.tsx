@@ -30,50 +30,53 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      display:true,
-      labels:{
-        color:"white",
-        font:{
-          size: 20
-        }
+      display: true,
+      labels: {
+        color: "white",
+        font: {
+          size: 20,
+        },
       },
       position: "right" as const,
     },
     title: {
       display: true,
       text: "ジュース売れ筋グラフ",
-      color:"white",
-      font:{
-        size: 30
-      }
+      color: "white",
+      font: {
+        size: 30,
+      },
     },
   },
   maintainAspectRatio: false,
-  scales:{
-    y:{
-      ticks:{
-        color:"white",
+  scales: {
+    y: {
+      ticks: {
+        color: "white",
         font: {
-          size:20
-        }
-      }
+          size: 20,
+        },
+      },
     },
-    x:{
-      ticks:{
-        color:"white",
-        font:{
-          size:20
-        }
-      }
-    }
-  }
+    x: {
+      ticks: {
+        color: "white",
+        font: {
+          size: 20,
+        },
+      },
+    },
+  },
 };
 
 const fetchItemList = async (setItemList) => {
-  const inputdata = await fetch(`${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item`, {
-    method: "GET",
-    mode: "cors",
-  })
+  const inputdata = await fetch(
+    `${window.location.protocol}//${window.location.host}${window.location.pathname}backend/item`,
+    {
+      method: "GET",
+      mode: "cors",
+    }
+  )
     .then((res) => res.json())
     .then((itemList) => {
       setItemList(itemList);
@@ -97,10 +100,9 @@ export default function SellingBarGraph(props) {
 
   let dict = setItemNameList(itemList);
   const labels = Object.keys(dict);
-  labels.sort((a,b) => {
+  labels.sort((a, b) => {
     return dict[b] - dict[a];
-  })
-
+  });
 
   const data = {
     labels,
@@ -116,16 +118,16 @@ export default function SellingBarGraph(props) {
 
   return (
     <SellingBarGraphPane>
-      <Bar options={options} data={data} height={props.height}/>
+      <Bar options={options} data={data} height={props.height} />
     </SellingBarGraphPane>
   );
 }
 
 const SellingBarGraphPane = styled.div`
-position:absolute;
-bottom:0em;
-top:6em;
-width:100%;
-background-color:#303030;
-color:greenyellow;
-`
+  position: absolute;
+  bottom: 0em;
+  top: 6em;
+  width: 100%;
+  background-color: #303030;
+  color: greenyellow;
+`;
