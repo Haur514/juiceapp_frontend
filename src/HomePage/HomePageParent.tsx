@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./HomePageParent.css";
 import ItemPane from "./Item/ItemPane";
 import MemberPane from "./Member/MemberPane";
+import styled from "styled-components";
 
 
 const fetchMemberList = async (setMemberList) =>{
@@ -83,7 +83,7 @@ function HomePageParent(){
 
     
     return(
-        <div className="HomePageParent">
+        <HomePageParentPane>
             <MemberPane 
                 setSelectedMemberId={setSelectedMemberId}
                 selectedMemberId={selectedMemberId}
@@ -101,8 +101,12 @@ function HomePageParent(){
                 selectedMember={selectedMember}
                 setSumPurchased={setSumPurchased}
                 sumPurchased={sumPurchased}/>
-        </div>
+        </HomePageParentPane>
     );
 }
+
+const HomePageParentPane = styled.div`
+display: flex;
+`
 
 export default HomePageParent;

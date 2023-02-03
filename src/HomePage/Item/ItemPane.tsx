@@ -26,20 +26,6 @@ function ItemPane(props) {
     Dagashi: LogoDagashi,
   };
 
-  let popupmenuProps = {
-    visibility: is_popup_visible,
-    setPopUpVisivility: setPopUpVisivility,
-    imgSrc:
-      logoDictionary[
-        props.selectedItem == null ? "CocaCola" : props.selectedItem.name
-      ],
-    selectedItem: props.selectedItem,
-    setSumPurchased: props.setSumPurchased,
-    selectedMember: props.selectedMember,
-    setUpdate: props.setUpdate,
-    update: props.update,
-  };
-
   const closePopUp = () => {
     setPopUpVisivility(false);
   };
