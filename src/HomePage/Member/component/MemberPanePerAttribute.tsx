@@ -2,17 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import MemberCard from "./MemberCard";
 
-
 function MemberPanePerAttribute({
-    description,
-    attribute,
-    memberList,
-    selectedMember,
-    setSelectedMember
-}){
-    return(
-        <div>
-                  <Attribute>{description}</Attribute>
+  description,
+  attribute,
+  memberList,
+  selectedMember,
+  setSelectedMember,
+}) {
+  return (
+    <div>
+      <Attribute>{description}</Attribute>
       {memberList
         .filter(function (member) {
           return member.attribute == attribute;
@@ -34,8 +33,8 @@ function MemberPanePerAttribute({
             />
           );
         })}
-        </div>
-    );
+    </div>
+  );
 }
 
 const Attribute = styled.div`
