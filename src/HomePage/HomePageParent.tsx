@@ -85,8 +85,6 @@ function HomePageParent(){
     return(
         <HomePageParentPane>
             <MemberPane 
-                setSelectedMemberId={setSelectedMemberId}
-                selectedMemberId={selectedMemberId}
                 selectedMember={selectedMember}
                 setSelectedMember={setSelectedMember}
                 memberList={memberList}/>

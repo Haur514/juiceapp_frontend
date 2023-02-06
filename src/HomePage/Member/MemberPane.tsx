@@ -4,8 +4,6 @@ import styled from "styled-components";
 import MemberPanePerAttribute from "./component/MemberPanePerAttribute";
 
 function MemberPane({
-  setSelectedMemberId,
-  selectedMemberId,
   selectedMember,
   setSelectedMember,
   memberList,
@@ -52,7 +50,7 @@ const MainMemberPane = styled.div`
   border-color: black;
   border: solid 1px #333;
   margin: 5px;
-
+  
   background-color: rgb(47, 47, 47);
   color: greenyellow;
 `;
