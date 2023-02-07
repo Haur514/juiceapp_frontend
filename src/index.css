@@ -8,6 +8,11 @@ body {
   overscroll-behavior: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+  -webkit-appearance: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
