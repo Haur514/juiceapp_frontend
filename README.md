@@ -1,12 +1,10 @@
 <!-- # HOW TO USE
 * [こちら](https://haur514.github.io/juiceapp_frontend/)にデモページをデプロイしています． -->
 
+## Purpose
+あるコミュニティにおける飲食物の販売管理を目的とするアプリケーション。
 
-# 動作例
-
-https://user-images.githubusercontent.com/82633228/204144072-2edb8c3c-020a-44db-902f-f9df52569743.mp4
-
-
+商品ごとの売り上げを可視化し、管理者による商品の発注個数の算出を支援する。
 
 ## HOW TO USE
 ```
